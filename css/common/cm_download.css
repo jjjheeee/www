@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* *******************************************************
+ * filename : download.css
+ * description : 다운로드형 게시판 관련 CSS
+ * date : 2021-03-29
+******************************************************** */
+/* ******************   게시판 :: 공통색상 ********************** */
+.download-list-con-style01 .download-item .download-btn:hover{background-color:#eb8500 !important;}
+
+/* ******************   다운로드 게시판 :: 기본형 01 ********************** */
+.download-list-con-style01 .download-item{overflow:hidden; display:flex; justify-content:space-between; align-items:center; border-top:1px solid #e4e4e4; padding:12px 30px; }
+.download-list-con-style01 .download-item:first-child{border-top:2px solid #474747;}
+.download-list-con-style01 .download-item .download-tit{float:left; padding-left:25px; position:relative;  width:calc(100% - 500px); color:#848484; font-size:14.5px; letter-spacing:-0.5px; font-weight:400; line-height:1.3}
+.download-list-con-style01 .download-item .download-tit a{color:inherit;}
+.download-list-con-style01 .download-item .download-tit:before{position:absolute; left:0; top:0; content: "\eb74"; font-family:"xeicon"; font-size:16px; color:#a9a9a9;}
+.download-list-con-style01 .download-item .download-tit .download-prd-name{font-weight:500; color:#333; margin-right:5px;}
+.download-list-con-style01 .download-item .download-controls{float:right; font-size:14.5px; letter-spacing:-0.5px; text-align:right; width:400px;}
+.download-list-con-style01 .download-item .download-controls dl{display:inline-block; vertical-align:middle;}
+.download-list-con-style01 .download-item .download-controls dl dt,
+.download-list-con-style01 .download-item .download-controls dl dd{float:left;}
+.download-list-con-style01 .download-item .download-controls dl{color:#848484;}
+.download-list-con-style01 .download-item .download-controls dl dt{padding-left:40px; position:relative;}
+.download-list-con-style01 .download-item .download-controls dl dt:before{position:absolute; top:0px;  bottom:0px; left:20px;  width:1px; content:""; background-color:#eee;}
+.download-list-con-style01 .download-item .download-controls dl dt:first-of-type{padding-left:0}
+.download-list-con-style01 .download-item .download-controls dl dt:first-of-type:before{display:none;}
+.download-list-con-style01 .download-item .download-controls dl dd{width:30px; white-space:nowrap; text-align:left; margin-left:3px;}
+.download-list-con-style01 .download-item .download-controls .file-size{color:#b9b9b9;}
+.download-list-con-style01 .download-item .download-btn{margin-left:30px; display:inline-block; vertical-align:middle; width:122px; height:35px; line-height:35px;  padding:0 20px; box-sizing:border-box; background-color:#9f9f9f;  color:#fff; border-radius:30px; transition:all 0.3s}
+.download-list-con-style01 .download-item .download-btn span{float:left;}
+.download-list-con-style01 .download-item .download-btn i{float:right; position:relative; top:1px; line-height:30px; }
+.download-list-con-style01 .download-item .download-btn:hover{background-color:#474747; }
+
+@media all and (max-width:1024px){	 
+	.download-list-con-style01 .download-item{display:block; border:1px solid #e4e4e4; margin-bottom:5px; padding:10px 15px;}
+	.download-list-con-style01 .download-item .download-tit{float:none; width:auto; color:#222; }
+	.download-list-con-style01 .download-item .download-controls{float:none; width:auto; text-align:left; margin-top:10px; padding-top:10px; padding-left:25px; font-size:13px; border-top:1px dotted #eee;}
+}
+@media all and (max-width:480px){
+	.download-list-con-style01 .download-item{position:relative;}
+	.download-list-con-style01 .download-item .download-tit{padding-right:35px; font-size:13px;}
+	.download-list-con-style01 .download-item .download-controls{position:relative; font-size:12px; }
+	.download-list-con-style01 .download-item .download-btn{position:absolute; top:-20px; right:-5px; text-align:center; width:35px; border-radius:50%; padding:0; }
+	.download-list-con-style01 .download-item .download-btn span{display:none;}
+	.download-list-con-style01 .download-item .download-btn i{float:none; line-height:20px; top:-2px; }
+}
+
+
+/* ******************   다운로드 게시판 :: 기본형 02 ********************** */
+.download-list-con-style02 .download-item{position:relative; border-bottom:1px solid #e1e1e1; padding:20px;}
+.download-list-con-style02 .download-item:first-child{border-top:1px solid #333;}
+.download-list-con-style02 .download-item .info-box{width:calc(100% - 210px);}
+.download-list-con-style02 .download-item .info-box .date-box{display:inline-block; vertical-align:middle; box-sizing:border-box; width:75px; height:75px; padding-top:15px; background-color:#8b857e; margin-right:32px; text-align:center; color:#fff; transition:background-color 0.5s}
+.download-list-con-style02 .download-item:hover .info-box .date-box{background-color:#eb8500;}
+.download-list-con-style02 .download-item .info-box .date-box .month{display:block; font-size:24px; font-weight:700; margin-bottom:5px;}
+.download-list-con-style02 .download-item .info-box .tit-box{display:inline-block; vertical-align:middle; width:calc(100% - 120px); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:#2f2821; font-size:22px; font-weight:500; letter-spacing:-0.5px;}
+.download-list-con-style02 .download-item .download-btn{position:absolute; top:50%; right:20px; width:193px; height:46px; padding:0 20px; line-height:44px; border:1px solid #333;  text-align:left; transform:translateY(-50%)}
+.download-list-con-style02 .download-item .download-btn em{position:relative; left:0px; z-index:1; font-size:11px; letter-spacing:1.5px; font-weight:900; color:#333;}
+.download-list-con-style02 .download-item .download-btn em .icon{position:static; margin-right:10px; font-size:16px; position:relative; top:2px; right:auto; line-height:40px;}
+.download-list-con-style02 .download-item .download-btn .arrow{font-size:20px; top:0px; right:18px; transition:all 0.5s; position:absolute;  line-height:45px; color:#333;}
+.download-list-con-style02 .download-item .download-btn:hover .arrow{transform:translateX(5px)}
+.download-list-con-style02 .download-btn,
+.download-list-con-style02 .download-btn em,
+.download-list-con-style02 .download-btn i{transition:color 0.5s 0.1s}
+.download-list-con-style02 .download-btn{position:relative; overflow:hidden; display:inline-block; border:1px solid #fff; text-align:center; box-sizing:border-box;}
+.download-list-con-style02 .download-btn:before{
+display:block; position:absolute; left:-140%; bottom:-10%; content:""; width:130%; height:160%; background-color:#333; transform:skew(-20deg);  transition:all 1s cubic-bezier(0.25, 0.1, 0.09, 1.06);
+}
+
+@media all and (min-width:1025px){
+	.download-list-con-style02 .download-btn:hover:before{left:-10%; opacity:1.0;filter:Alpha(opacity=100);}
+	.download-list-con-style02 .download-btn:hover em,
+	.download-list-con-style02 .download-btn:hover em .icon,
+	.download-list-con-style02 .download-btn:hover .arrow{color:#fff;}
+}
+
+@media all and (max-width:800px){
+	.download-list-con-style02 .download-item{padding:10px;}
+	.download-list-con-style02 .download-item .info-box{width:calc(100% - 150px);}
+	.download-list-con-style02 .download-item .info-box .date-box{width:50px; height:50px; padding-top:10px; margin-right:15px; font-size:11px;}
+	.download-list-con-style02 .download-item .info-box .date-box .month{font-size:16px; }
+	.download-list-con-style02 .download-item .info-box .tit-box{width:calc(100% - 70px); font-size:18px;}
+	.download-list-con-style02 .download-item .download-btn {width:120px; right:10px; height:34px; line-height:34px; padding:0 10px; text-align:center;}
+	.download-list-con-style02 .download-item .download-btn i{display:none;}
+}
+@media all and (max-width:480px){
+	.download-list-con-style02 .download-item{padding:10px 0;}
+	.download-list-con-style02 .download-item .info-box{width:auto}
+	.download-list-con-style02 .download-item .download-btn{position:static; transform:translateY(0); width:100%; margin-top:10px;}
+	.download-list-con-style02 .download-item .download-btn em .icon{display:inline-block; line-height:28px; margin-right:5px;}
+}

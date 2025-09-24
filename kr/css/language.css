@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* *******************************************************
+ * filename : language.css
+ * description : 국문  CSS
+ * date : 2020-11-24
+******************************************************** */
+
+/* ******************  Layout.css ********************** */
+html[lang="ko"]{}
+.header-lang-list li.cur a{margin-left:-1px;}
+/* ******************  Main.css ********************** */
+
+
+/* ******************  Content.css ********************** */
+/* -------- Company :: CEO인사말 -------- */
+
+
+
+/* ****************** Equiptment :: Validation  ********************** */
+.validation-con02 .txt-box .txt-item .inner {width:100%;}
+.validation-con02 .txt-box .txt-item .txt {display:flex; line-height:1.4; margin-top:10px;  box-sizing: border-box; }
+.validation-con02 .txt-box .txt-item .txt:before {top:calc(0.7em - 2px);}
+.validation-con02 .txt-box .txt-item .txt span {display:inline-block; width:80px;}
+.validation-con02 .txt-box .txt-item .txt span:first-child {width:19.29%; font-weight:700;}
+.validation-con02 .txt-box .txt-item .txt span:last-child {width:80.71%}
+
+@media all and (max-width:1024px){
+	.validation-con02 .txt-box .txt-item .txt {display:block;}
+	.validation-con02 .txt-box .txt-item .txt span  {display:block; width:100% !important;}
+}

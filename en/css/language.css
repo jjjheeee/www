@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* *******************************************************
+ * filename : language.css
+ * description : 국문  CSS
+ * date : 2020-11-24
+******************************************************** */
+
+/* ******************  Layout.css ********************** */
+html[lang="ko"]{}
+/* ******************  Main.css ********************** */
+
+
+/* ******************  Content.css ********************** */
+/* -------- Company :: CEO인사말 -------- */
+@media all and (max-width:800px){
+	/* html[lang="ko"] 사용하면 css우선순위가 높아집니다. */
+}
+
+html[lang="en"] .about-page .about-grid-list-box .grid-list-tit {padding-right: 10px;}

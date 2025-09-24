@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="robots" content="none">
+<title>이미지 첨부</title>
+<script src="../../js/popup.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="../../css/popup.css" type="text/css"  charset="utf-8"/>
+
+<script src="https://use.fontawesome.com/0ec13dcd55.js"></script>
+<?
+if(isset($_SERVER["HTTPS"])) {?>
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+<?} else {?>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<?}?>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<style type="text/css">
+	.wrapper{
+		font-family:'Noto Sans KR', sans-serif;
+	}
+	.wrapper .header{
+		height:auto; padding:10px 40px;
+		background-size:cover;
+	} 
+	.wrapper h1{
+		padding-bottom:10px;
+		font-size:20px;
+		float:none;
+	}
+    .imgs_wrap	{
+        border: 2px solid #A8A8A8;
+		min-height:220px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .imgs_wrap img {
+        max-width: 150px;
+    }
+	.AClass{
+		font-size: 17px;
+	    position: absolute;
+	    opacity: 1;
+		color:#fff;
+		background-color:#333;
+		border:0;
+		width:25px;
+		height:25px;
+	}
+	.wrap_div_img{
+		max-width: 150px;
+        margin-left: 10px;
+        margin-right: 10px;
+		margin-bottom:5px;
+		vertical-align:top;
+		box-sizing:border-box;
+	}
+	.btn-_default{
+		padding: 5px 16px 7px;
+	    font-size: 18px;
+	    border-radius: 6px;
+	    color: #333;
+	    background-color: #333;
+	    border-color: #333;
+	    border: 1px solid transparent;
+		color:#fff;
+	}
+	.btn-submit{
+		background-color:#337ab7
+	}
+</style>
+
+
+<!-- Plupload -->
+</head>
+<body>
+<div class="wrapper">
+	<form method="post" action="image_exe.php" name="form" enctype="multipart/form-data">
+	<div class="header">
+		<h1>사진 첨부 (한 장당 5MB)</h1>
+	</div>
+	<div class="body">
+
+<div style="width:90%; margin:auto;">
+	<div>
+	    <div class="imgs_wrap" style="text-align:center;">
+	    	<h2 class="imgs_wrap_h2" style="color: #aaa;top: 90px;position: relative;">이미지를 선택하거나 드래그 하세요.</h2>
+		</div>
+	</div>
+	<div class="input_wrap" style="text-align:center;">
+	    <a href="javascript:" onclick="file_upload();" class="btn-_default">이미지선택</a>
+	    <input type="file" id="input_imgs" multiple style="display:none" />
+		&nbsp;&nbsp;&nbsp;
+		<a href="javascript:" class="btn-_default" onclick="file_submit();">전송하기</a>
+	</div>
+</div>
+		
+		<!-- 이미지 업로드 -->
+	</div>
+	<!--<div class="footer">
+		<ul>
+			
+			<!-- <li class="submit">
+				<input type="image" src="/webeditor/images/icon/editor/btn_upload_submit.gif">
+			</li> -->
+			
+			<!-- <li class="cancel"><a href="#" onclick="closeWindow();" title="전송하기">전송하기</a></li> ->
+		</ul>
+	</div>-->
+	</form>
+</div>
+
+<div id="trade_method_info"></div>
+
+</body>
+</html>
+
+
+<script type="text/javascript">
+
+var sel_files = new Array();
+var h2_html = "<h2 class=\"imgs_wrap_h2\" style=\"color: #aaa;top: 90px;position: relative;\">이미지를 선택하거나 드래그 하세요.</h2>";
+
+$(document).ready(function() {
+    $("#input_imgs").on("change", file_handler);
+
+
+			var dropZone = document.querySelector(".imgs_wrap")
+			
+			var toggleClass = function(className) {
+                
+                //console.log("current event: " + className)
+
+                var list = ["dragenter", "dragleave", "dragover", "drop"]
+
+                for (var i = 0; i < list.length; i++) {
+                    if (className === list[i]) {
+                        dropZone.classList.add("drop-zone-" + list[i])
+                    } else {
+                        dropZone.classList.remove("drop-zone-" + list[i])
+                    }
+                }
+            }
+			
+			// 드래그한 파일이 최초로 진입했을 때
+            dropZone.addEventListener("dragenter", function(e) {
+                e.stopPropagation()
+                e.preventDefault()
+
+                toggleClass("dragenter")
+
+            })
+
+            // 드래그한 파일이 dropZone 영역을 벗어났을 때
+            dropZone.addEventListener("dragleave", function(e) {
+                e.stopPropagation()
+                e.preventDefault()
+
+                toggleClass("dragleave")
+
+            })
+
+            // 드래그한 파일이 dropZone 영역에 머물러 있을 때
+            dropZone.addEventListener("dragover", function(e) {
+                e.stopPropagation()
+                e.preventDefault()
+
+                toggleClass("dragover")
+
+            })
+
+            // 드래그한 파일이 드랍되었을 때
+            dropZone.addEventListener("drop", function(e) {
+                e.preventDefault()
+
+                toggleClass("drop")
+
+                var files = e.dataTransfer && e.dataTransfer.files
+                //console.log(files)
+
+                if (files != null) {
+                    if (files.length < 1) {
+                        alert("폴더 업로드 불가")
+                        return
+                    }
+                    file_handler(files,'2')
+                } else {
+                    alert("ERROR")
+                }
+
+            })
+
+
+}); 
+
+function file_upload() 
+{
+    $("#input_imgs").trigger('click');
+}
+
+function file_handler(e,text) 
+{
+	if(text=="2"){
+		var files = e;
+	} else {
+	    var files = e.target.files;
+	}
+    var filesArr = Array.prototype.slice.call(files);
+
+	var maxSize = 5 * 1024 * 1024; // 5MB
+
+    filesArr.forEach(function(file) {
+        if(!file.type.match("image.*"))
+		{
+            alert("확장자는 이미지 파일만 가능합니다.");
+            return;
+        }
+
+		var fileSize = file.size;
+		if(fileSize > maxSize){
+			alert("이미지 사이즈는 5MB 이내로 등록 가능합니다.");
+			return;
+		}
+
+
+        var f_reader = new FileReader();
+	    var index = sel_files.length;
+		f_reader.onload = function(e) {
+			var delete_html = "<div class=\"wrap_div_img\" id=\"img_id_"+index+"\" style=\"display: inline-block\" file=\""+file.name+"\">" +
+								"<button type=\"button\" class=\"close AClass\" style=\"\"><span><i class=\"fa fa-times\" aria-hidden=\"true\"></i></span></button>"+
+		   						"<img src=\"" + e.target.result + "\" >"+
+								"</div>";
+            $(".imgs_wrap").append(delete_html);
+			$(".imgs_wrap_h2").remove();
+			$(".imgs_wrap").css("text-align", "");
+        }
+        sel_files.push(file); //배열의 마지막에 추가
+        f_reader.readAsDataURL(file);
+    });
+}
+
+$(document).on("click","button[class='close AClass']",function(e){
+	
+	e.preventDefault();
+    $(this).parent().remove('');       
+               
+    var file = $(this).parent().attr('file');
+    for(var i = 0; i < sel_files.length; i++) {
+		if(sel_files[i].name == file) {
+		    sel_files.splice(i, 1);
+            break;
+        }
+    }	
+
+	var img_ea = $(".wrap_div_img").length;
+
+	if( img_ea == 0 ){
+		sel_files.splice(0); //배열 초기화
+		$(".imgs_wrap").val('');
+		$(".imgs_wrap").append(h2_html);
+		$(".imgs_wrap").css("text-align", "center");
+		$("#input_imgs").val('');
+	}
+	
+});
+
+function file_submit() 
+{
+    var data = new FormData();
+
+    var img_ea = $(".wrap_div_img").length;
+	
+	for(var i=0; i<sel_files.length; i++) 
+	{	
+		var name = i;
+        data.append(name, sel_files[i]);
+	}
+	
+    data.append("image_count", sel_files.length);
+    if(img_ea < 1) 
+	{
+		alert("이미지를 선택해주세요.")
+        return;
+    }
+
+	//form.submit();
+	
+	
+	$.ajax({
+		url: "./image_exe.php",
+        type: 'POST',
+        data: data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function (response) { 
+			$("#trade_method_info").html(response);
+			form2.submit(); 
+		},
+        error: function () { fx_alert("서버와의 연결에 문제가 있습니다. 잠시후 다시 시도해 주세요."); }
+    });
+	
+}
+
+</script>

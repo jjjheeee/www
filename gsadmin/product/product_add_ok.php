@@ -1,0 +1,347 @@
+<?
+extract($_POST);
+extract($_GET);
+$mod	= "product";	
+$menu	= "product";
+include("../header.php");
+
+$table_name	= "cs_goods";
+$returnURL		= $returnURL? $returnURL:"product.php";
+
+//파일업로드경로
+$file_dir	 = $_SERVER['DOCUMENT_ROOT']."/data/bbsData/";
+//GD함수 업로드
+include $_SERVER['DOCUMENT_ROOT']."/bbs/gd.php";
+
+if( $tools->chkDigit($_POST['part_code'] )) {
+	$part_row=$db->object("cs_part", "where part1_code='$_POST[part_code]' or part2_code='$_POST[part_code]' or part3_code='$_POST[part_code]'", "idx");
+	
+	$display				=	$db->filter($_POST['display']);
+	$code					=	$db->filter($_POST['code']);
+	$icon					=	$db->filter($_POST['icon']);
+	$name				=	$_POST['name'];
+	$name2				=  $db->filter($_POST['name2']);
+	$name_s				=  $db->filter($_POST['name_s']);
+	$company			=	$db->filter($_POST['company']);
+	$old_price		=	$db->filter($_POST['old_price']);
+	$shop_price		=	$db->filter($_POST['shop_price']);
+	$sold_out			=	$db->filter($_POST['sold_out']);
+	$number			=	$db->filter($_POST['number']);
+	$point				=	$db->filter($_POST['point']);
+	$option_check=	$db->filter($_POST['option_check']);
+	$content			=	$db->filter2($_POST['content']);
+	$content_re			=	$db->filter2($_POST['content_re']);
+	$content_re_s		=	$db->filter2($_POST['content_re_s']);
+	$main_position=$db->filter($_POST['main_position']);
+	$sub_position	=	$db->filter($_POST['sub_position']);
+	$zzim					=	$db->filter($_POST['zzim']);
+	$keywords = $db->filter($_POST['keywords']);
+
+	// 상품 이미지 등록
+	if( $_FILES['images1']['size'] > 0 ) {
+		$EXT_CHECK = array("php", "php3", "htm", "html", "cgi", "perl");	// 업로드 파일 제한 확장자 추가 가능
+		if( $EXT_TMP = explode( ".", $_FILES['images1']['name'])) {	 foreach ($EXT_CHECK as $value) { if( strstr( $value, strtolower($EXT_TMP[1]))) { $tools->errMsg( strtoupper($EXT_TMP[1])." 은 업로드 할수 없습니다." ); } }	}
+		if( $_FILES['images1']['size']  > 1024*1024*5) { $tools->errMsg("업로드 용량 초과입니다\\n\\n5메가 까지 업로드 가능합니다"); exit(); }
+		$images1_name = substr($_FILES['images1']['name'],-5);
+		$images1name = explode(".",$images1_name);
+		$images1 = 'GOODS1_'.$code.".".$images1name[1];
+		list($width, $height)=getimagesize($_FILES['images1']['tmp_name']); 
+		if($width>2600){
+			$imgwidth=$width*(50/100);//width 값 
+			$imgheight=$height*(50/100);//height 값 
+			if(!@GDImageResize($_FILES['images1']['tmp_name'], "../../data/goodsImages/".$images1, $imgwidth, $imgheight)){ $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['images1']['tmp_name']);	} 
+		} else {
+			if( !@move_uploaded_file($_FILES['images1']['tmp_name'], "../../data/goodsImages/".$images1) ) { $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['images1']['tmp_name']);	} 
+		}
+	}
+
+	
+	if( $_FILES['images2']['size'] > 0 ) {
+		$EXT_CHECK = array("php", "php3", "htm", "html", "cgi", "perl");	// 업로드 파일 제한 확장자 추가 가능
+		if( $EXT_TMP = explode( ".", $_FILES['images2']['name'])) {	 foreach ($EXT_CHECK as $value) { if( strstr( $value, strtolower($EXT_TMP[1]))) { $tools->errMsg( strtoupper($EXT_TMP[1])." 은 업로드 할수 없습니다." ); } }	}
+		if( $_FILES['images2']['size']  > 1024*1024*5) { $tools->errMsg("업로드 용량 초과입니다\\n\\n5메가 까지 업로드 가능합니다"); exit(); }
+		$images2_name = substr($_FILES['images2']['name'],-5);
+		$images2name = explode(".",$images2_name);
+		$images2 = 'GOODS2_'.$code.".".$images2name[1];
+		list($width, $height)=getimagesize($_FILES['images2']['tmp_name']); 
+		if($width>2600){
+			$imgwidth=$width*(50/100);//width 값 
+			$imgheight=$height*(50/100);//height 값 
+			if(!@GDImageResize($_FILES['images2']['tmp_name'], "../../data/goodsImages/".$images2, $imgwidth, $imgheight)){ $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['images2']['tmp_name']);	} 
+		} else {
+			if( !@move_uploaded_file($_FILES['images2']['tmp_name'], "../../data/goodsImages/".$images2) ) { $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['images2']['tmp_name']);	} 
+		}
+	}
+
+
+	// 추가 상품 이미지 등록
+	if( $_FILES['add_images1']['size'] > 0 ) {
+		$EXT_CHECK = array("php", "php3", "htm", "html", "cgi", "perl");	// 업로드 파일 제한 확장자 추가 가능
+		if( $EXT_TMP = explode( ".", $_FILES['add_images1']['name'])) {	 foreach ($EXT_CHECK as $value) { if( strstr( $value, strtolower($EXT_TMP[1]))) { $tools->errMsg( strtoupper($EXT_TMP[1])." 은 업로드 할수 없습니다." ); } }	}
+		if( $_FILES['add_images1']['size']  > 1024*1024*5) { $tools->errMsg("업로드 용량 초과입니다\\n\\n5메가 까지 업로드 가능합니다"); exit(); }
+		$add_images1_name = substr($_FILES['add_images1']['name'],-5);
+		$add1 = explode(".",$add_images1_name);
+		$add_images1 = 'ADD_GOODS1_'.$code.".".$add1[1];
+		list($width, $height)=getimagesize($_FILES['add_images1']['tmp_name']); 
+		if($width>2600){
+			$imgwidth=$width*(50/100);//width 값 
+			$imgheight=$height*(50/100);//height 값 
+			if(!@GDImageResize($_FILES['add_images1']['tmp_name'], "../../data/goodsImages/".$add_images1, $imgwidth, $imgheight)){ $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images1']['tmp_name']);	} 
+		} else {
+			if( !@move_uploaded_file($_FILES['add_images1']['tmp_name'], "../../data/goodsImages/".$add_images1) ) { $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images1']['tmp_name']);	} 
+		}
+	}
+
+	if( $_FILES['add_images2']['size'] > 0 ) {
+		$EXT_CHECK = array("php", "php3", "htm", "html", "cgi", "perl");	// 업로드 파일 제한 확장자 추가 가능
+		if( $EXT_TMP = explode( ".", $_FILES['add_images2']['name'])) {	 foreach ($EXT_CHECK as $value) { if( strstr( $value, strtolower($EXT_TMP[1]))) { $tools->errMsg( strtoupper($EXT_TMP[1])." 은 업로드 할수 없습니다." ); } }	}
+		if( $_FILES['add_images2']['size']  > 1024*1024*5) { $tools->errMsg("업로드 용량 초과입니다\\n\\n5메가 까지 업로드 가능합니다"); exit(); }
+		$add_images2_name = substr($_FILES['add_images2']['name'],-5);
+		$add2 = explode(".",$add_images2_name);
+		$add_images2 = 'ADD_GOODS2_'.$code.".".$add2[1];
+		list($width, $height)=getimagesize($_FILES['add_images2']['tmp_name']); 
+		if($width>2600){
+			$imgwidth=$width*(50/100);//width 값 
+			$imgheight=$height*(50/100);//height 값 
+			if(!@GDImageResize($_FILES['add_images2']['tmp_name'], "../../data/goodsImages/".$add_images2, $imgwidth, $imgheight)){ $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images2']['tmp_name']);	} 
+		} else {
+			if( !@move_uploaded_file($_FILES['add_images2']['tmp_name'], "../../data/goodsImages/".$add_images2) ) { $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images2']['tmp_name']);	} 
+		}
+	}
+
+	if( $_FILES['add_images3']['size'] > 0 ) {
+		$EXT_CHECK = array("php", "php3", "htm", "html", "cgi", "perl");	// 업로드 파일 제한 확장자 추가 가능
+		if( $EXT_TMP = explode( ".", $_FILES['add_images3']['name'])) {	 foreach ($EXT_CHECK as $value) { if( strstr( $value, strtolower($EXT_TMP[1]))) { $tools->errMsg( strtoupper($EXT_TMP[1])." 은 업로드 할수 없습니다." ); } }	}
+		if( $_FILES['add_images3']['size']  > 1024*1024*5) { $tools->errMsg("업로드 용량 초과입니다\\n\\n5메가 까지 업로드 가능합니다"); exit(); }
+		$add_images3_name = substr($_FILES['add_images3']['name'],-5);
+		$add3 = explode(".",$add_images3_name);
+		$add_images3 = 'ADD_GOODS3_'.$code.".".$add3[1];
+		list($width, $height)=getimagesize($_FILES['add_images3']['tmp_name']); 
+		if($width>2600){
+			$imgwidth=$width*(50/100);//width 값 
+			$imgheight=$height*(50/100);//height 값 
+			if(!@GDImageResize($_FILES['add_images3']['tmp_name'], "../../data/goodsImages/".$add_images3, $imgwidth, $imgheight)){ $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images3']['tmp_name']);	} 
+		} else {
+			if( !@move_uploaded_file($_FILES['add_images3']['tmp_name'], "../../data/goodsImages/".$add_images3) ) { $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images3']['tmp_name']);	} 
+		}
+	}
+
+	if( $_FILES['add_images4']['size'] > 0 ) {
+		$EXT_CHECK = array("php", "php3", "htm", "html", "cgi", "perl");	// 업로드 파일 제한 확장자 추가 가능
+		if( $EXT_TMP = explode( ".", $_FILES['add_images4']['name'])) {	 foreach ($EXT_CHECK as $value) { if( strstr( $value, strtolower($EXT_TMP[1]))) { $tools->errMsg( strtoupper($EXT_TMP[1])." 은 업로드 할수 없습니다." ); } }	}
+		if( $_FILES['add_images4']['size']  > 1024*1024*5) { $tools->errMsg("업로드 용량 초과입니다\\n\\n5메가 까지 업로드 가능합니다"); exit(); }
+		$add_images4_name = substr($_FILES['add_images4']['name'],-5);
+		$add4 = explode(".",$add_images4_name);
+		$add_images4 = 'ADD_GOODS4_'.$code.".".$add4[1];
+		list($width, $height)=getimagesize($_FILES['add_images4']['tmp_name']); 
+		if($width>2600){
+			$imgwidth=$width*(50/100);//width 값 
+			$imgheight=$height*(50/100);//height 값 
+			if(!@GDImageResize($_FILES['add_images4']['tmp_name'], "../../data/goodsImages/".$add_images4, $imgwidth, $imgheight)){ $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images4']['tmp_name']);	} 
+		} else {
+			if( !@move_uploaded_file($_FILES['add_images4']['tmp_name'], "../../data/goodsImages/".$add_images4) ) { $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images4']['tmp_name']);	} 
+		}
+	}
+
+	if( $_FILES['add_images5']['size'] > 0 ) {
+		$EXT_CHECK = array("php", "php3", "htm", "html", "cgi", "perl");	// 업로드 파일 제한 확장자 추가 가능
+		if( $EXT_TMP = explode( ".", $_FILES['add_images5']['name'])) {	 foreach ($EXT_CHECK as $value) { if( strstr( $value, strtolower($EXT_TMP[1]))) { $tools->errMsg( strtoupper($EXT_TMP[1])." 은 업로드 할수 없습니다." ); } }	}
+		if( $_FILES['add_images5']['size']  > 1024*1024*5) { $tools->errMsg("업로드 용량 초과입니다\\n\\n5메가 까지 업로드 가능합니다"); exit(); }
+		$add_images5_name = substr($_FILES['add_images5']['name'],-5);
+		$add5 = explode(".",$add_images5_name);
+		$add_images5 = 'ADD_GOODS5_'.$code.".".$add5[1];
+		list($width, $height)=getimagesize($_FILES['add_images5']['tmp_name']); 
+		if($width>2600){
+			$imgwidth=$width*(50/100);//width 값 
+			$imgheight=$height*(50/100);//height 값 
+			if(!@GDImageResize($_FILES['add_images5']['tmp_name'], "../../data/goodsImages/".$add_images5, $imgwidth, $imgheight)){ $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images5']['tmp_name']);	} 
+		} else {
+			if( !@move_uploaded_file($_FILES['add_images5']['tmp_name'], "../../data/goodsImages/".$add_images5) ) { $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images5']['tmp_name']);	} 
+		}
+	}
+
+	if( $_FILES['add_images6']['size'] > 0 ) {
+		$EXT_CHECK = array("php", "php3", "htm", "html", "cgi", "perl");	// 업로드 파일 제한 확장자 추가 가능
+		if( $EXT_TMP = explode( ".", $_FILES['add_images6']['name'])) {	 foreach ($EXT_CHECK as $value) { if( strstr( $value, strtolower($EXT_TMP[1]))) { $tools->errMsg( strtoupper($EXT_TMP[1])." 은 업로드 할수 없습니다." ); } }	}
+		if( $_FILES['add_images6']['size']  > 1024*1024*5) { $tools->errMsg("업로드 용량 초과입니다\\n\\n5메가 까지 업로드 가능합니다"); exit(); }
+		$add_images6_name = substr($_FILES['add_images6']['name'],-5);
+		$add6 = explode(".",$add_images6_name);
+		$add_images6 = 'ADD_GOODS6_'.$code.".".$add6[1];
+		list($width, $height)=getimagesize($_FILES['add_images6']['tmp_name']); 
+		if($width>2600){
+			$imgwidth=$width*(50/100);//width 값 
+			$imgheight=$height*(50/100);//height 값 
+			if(!@GDImageResize($_FILES['add_images6']['tmp_name'], "../../data/goodsImages/".$add_images6, $imgwidth, $imgheight)){ $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images6']['tmp_name']);	} 
+		} else {
+			if( !@move_uploaded_file($_FILES['add_images6']['tmp_name'], "../../data/goodsImages/".$add_images6) ) { $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images6']['tmp_name']);	} 
+		}
+	}
+
+	if( $_FILES['add_images7']['size'] > 0 ) {
+		$EXT_CHECK = array("php", "php3", "htm", "html", "cgi", "perl");	// 업로드 파일 제한 확장자 추가 가능
+		if( $EXT_TMP = explode( ".", $_FILES['add_images7']['name'])) {	 foreach ($EXT_CHECK as $value) { if( strstr( $value, strtolower($EXT_TMP[1]))) { $tools->errMsg( strtoupper($EXT_TMP[1])." 은 업로드 할수 없습니다." ); } }	}
+		if( $_FILES['add_images7']['size']  > 1024*1024*5) { $tools->errMsg("업로드 용량 초과입니다\\n\\n5메가 까지 업로드 가능합니다"); exit(); }
+		$add_images7_name = substr($_FILES['add_images7']['name'],-5);
+		$add7 = explode(".",$add_images7_name);
+		$add_images7 = 'ADD_GOODS7_'.$code.".".$add7[1];
+		list($width, $height)=getimagesize($_FILES['add_images7']['tmp_name']); 
+		if($width>2600){
+			$imgwidth=$width*(50/100);//width 값 
+			$imgheight=$height*(50/100);//height 값 
+			if(!@GDImageResize($_FILES['add_images7']['tmp_name'], "../../data/goodsImages/".$add_images7, $imgwidth, $imgheight)){ $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images7']['tmp_name']);	} 
+		} else {
+			if( !@move_uploaded_file($_FILES['add_images7']['tmp_name'], "../../data/goodsImages/".$add_images7) ) { $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images7']['tmp_name']);	} 
+		}
+	}
+
+	if( $_FILES['add_images8']['size'] > 0 ) {
+		$EXT_CHECK = array("php", "php3", "htm", "html", "cgi", "perl");	// 업로드 파일 제한 확장자 추가 가능
+		if( $EXT_TMP = explode( ".", $_FILES['add_images8']['name'])) {	 foreach ($EXT_CHECK as $value) { if( strstr( $value, strtolower($EXT_TMP[1]))) { $tools->errMsg( strtoupper($EXT_TMP[1])." 은 업로드 할수 없습니다." ); } }	}
+		if( $_FILES['add_images8']['size']  > 1024*1024*5) { $tools->errMsg("업로드 용량 초과입니다\\n\\n5메가 까지 업로드 가능합니다"); exit(); }
+		$add_images8_name = substr($_FILES['add_images8']['name'],-5);
+		$add8 = explode(".",$add_images8_name);
+		$add_images8 = 'ADD_GOODS8_'.$code.".".$add8[1];
+		list($width, $height)=getimagesize($_FILES['add_images8']['tmp_name']); 
+		if($width>2600){
+			$imgwidth=$width*(50/100);//width 값 
+			$imgheight=$height*(50/100);//height 값 
+			if(!@GDImageResize($_FILES['add_images8']['tmp_name'], "../../data/goodsImages/".$add_images5, $imgwidth, $imgheight)){ $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images8']['tmp_name']);	} 
+		} else {
+			if( !@move_uploaded_file($_FILES['add_images8']['tmp_name'], "../../data/goodsImages/".$add_images8) ) { $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images8']['tmp_name']);	} 
+		}
+	}
+
+	if( $_FILES['add_images9']['size'] > 0 ) {
+		$EXT_CHECK = array("php", "php3", "htm", "html", "cgi", "perl");	// 업로드 파일 제한 확장자 추가 가능
+		if( $EXT_TMP = explode( ".", $_FILES['add_images9']['name'])) {	 foreach ($EXT_CHECK as $value) { if( strstr( $value, strtolower($EXT_TMP[1]))) { $tools->errMsg( strtoupper($EXT_TMP[1])." 은 업로드 할수 없습니다." ); } }	}
+		if( $_FILES['add_images9']['size']  > 1024*1024*5) { $tools->errMsg("업로드 용량 초과입니다\\n\\n5메가 까지 업로드 가능합니다"); exit(); }
+		$add_images9_name = substr($_FILES['add_images9']['name'],-5);
+		$add9 = explode(".",$add_images9_name);
+		$add_images9 = 'ADD_GOODS9_'.$code.".".$add9[1];
+		list($width, $height)=getimagesize($_FILES['add_images9']['tmp_name']); 
+		if($width>2600){
+			$imgwidth=$width*(50/100);//width 값 
+			$imgheight=$height*(50/100);//height 값 
+			if(!@GDImageResize($_FILES['add_images9']['tmp_name'], "../../data/goodsImages/".$add_images9, $imgwidth, $imgheight)){ $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images9']['tmp_name']);	} 
+		} else {
+			if( !@move_uploaded_file($_FILES['add_images9']['tmp_name'], "../../data/goodsImages/".$add_images9) ) { $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images9']['tmp_name']);	} 
+		}
+	}
+
+	if( $_FILES['add_images10']['size'] > 0 ) {
+		$EXT_CHECK = array("php", "php3", "htm", "html", "cgi", "perl");	// 업로드 파일 제한 확장자 추가 가능
+		if( $EXT_TMP = explode( ".", $_FILES['add_images10']['name'])) {	 foreach ($EXT_CHECK as $value) { if( strstr( $value, strtolower($EXT_TMP[1]))) { $tools->errMsg( strtoupper($EXT_TMP[1])." 은 업로드 할수 없습니다." ); } }	}
+		if( $_FILES['add_images10']['size']  > 1024*1024*5) { $tools->errMsg("업로드 용량 초과입니다\\n\\n5메가 까지 업로드 가능합니다"); exit(); }
+		$add_images10_name = substr($_FILES['add_images10']['name'],-5);
+		$add10 = explode(".",$add_images10_name);
+		$add_images10 = 'ADD_GOODS5_'.$code.".".$add10[1];
+		list($width, $height)=getimagesize($_FILES['add_images10']['tmp_name']); 
+		if($width>2600){
+			$imgwidth=$width*(50/100);//width 값 
+			$imgheight=$height*(50/100);//height 값 
+			if(!@GDImageResize($_FILES['add_images10']['tmp_name'], "../../data/goodsImages/".$add_images10, $imgwidth, $imgheight)){ $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images10']['tmp_name']);	} 
+		} else {
+			if( !@move_uploaded_file($_FILES['add_images10']['tmp_name'], "../../data/goodsImages/".$add_images10) ) { $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['add_images10']['tmp_name']);	} 
+		}
+	}
+
+	if( $_FILES['bbs_file']['size'] > 0 ) {
+		$EXT_CHECK = array("php", "php3", "htm", "html", "cgi", "perl");	// 업로드 파일 제한 확장자 추가 가능
+		if( $EXT_TMP = explode( ".", $_FILES['bbs_file']['name'])) {	 foreach ($EXT_CHECK as $value) { if( strstr( $value, strtolower($EXT_TMP[1]))) { $tools->errMsg( strtoupper($EXT_TMP[1])." 은 업로드 할수 없습니다." ); } }	}
+		if( $_FILES['bbs_file']['size']  > 1024*1024*20) { $tools->errMsg("업로드 용량 초과입니다\\n\\n20메가 까지 업로드 가능합니다"); exit(); }
+		$filename = substr($_FILES['bbs_file']['name'],-5);
+		$fn = explode(".",$filename); 
+		$EXT_TMP = $fn[1]; 
+		$file_name	= time()."1.".$EXT_TMP;
+		$sfile_name = $_FILES['bbs_file']['name'];
+		if( !@move_uploaded_file($_FILES['bbs_file']['tmp_name'], $file_dir.$file_name) ) { $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['bbs_file']['tmp_name']);	} 
+	} else {
+		$file_name 	= "";
+	}
+
+	if( $_FILES['bbs_file2']['size'] > 0 ) {
+		$EXT_CHECK = array("php", "php3", "htm", "html", "cgi", "perl");	// 업로드 파일 제한 확장자 추가 가능
+		if( $EXT_TMP = explode( ".", $_FILES['bbs_file2']['name'])) {	 foreach ($EXT_CHECK as $value) { if( strstr( $value, strtolower($EXT_TMP[1]))) { $tools->errMsg( strtoupper($EXT_TMP[1])." 은 업로드 할수 없습니다." ); } }	}
+		if( $_FILES['bbs_file2']['size']  > 1024*1024*20) { $tools->errMsg("업로드 용량 초과입니다\\n\\n20메가 까지 업로드 가능합니다"); exit(); }
+		$filename = substr($_FILES['bbs_file2']['name'],-5);
+		$fn = explode(".",$filename); 
+		$EXT_TMP = $fn[1]; 
+		$file_name2	= time()."2.".$EXT_TMP;
+		$sfile_name2 = $_FILES['bbs_file2']['name'];
+		if( !@move_uploaded_file($_FILES['bbs_file2']['tmp_name'], $file_dir.$file_name2) ) { $tools->errMsg("파일 업로드 에러"); } else { @unlink($_FILES['bbs_file2']['tmp_name']);	} 
+	} else {
+		$file_name2 	= "";
+		$sfile_name2 	= "";
+	}
+
+
+	/*옵션 설정*/
+	if($option_check > 0){
+		for($i=0; $i<count(${'option_name'}); $i++){
+			//숫자체크
+			if(!is_numeric($option_price[$i])){	
+				$option_price[$i] = 0;
+			}
+			$query = "insert into cs_option set
+				code='$code',
+				name='$option_name[$i]',
+				price='$option_price[$i]',
+				number='$option_number[$i]',
+				sold_out='$hidden_option_sold_out[$i]'";
+			mysqli_query($db2,$query);
+		}
+	}
+
+
+	$sql = "part_idx='$part_row->idx',
+			display='$display',
+			code='$code',
+			icon='$icon',
+			name='$name',
+			name2='$name2',
+			name_s='$name_s',
+			company='$company',
+			old_price='$old_price',
+			shop_price='$shop_price',
+			sold_out='$sold_out',
+			number='$number',
+			point='$point',
+			option_check='$option_check',
+			images1='$images1',
+			images2='$images2',
+			add_images1='$add_images1',
+			add_images2='$add_images2',
+			add_images3='$add_images3',
+			add_images4='$add_images4',
+			add_images5='$add_images5',
+			add_images6='$add_images6',
+			add_images7='$add_images7',
+			add_images8='$add_images8',
+			add_images9='$add_images9',
+			add_images10='$add_images10',
+			bbs_file='$file_name',
+			sbbs_file='$sfile_name',
+			bbs_file2='$file_name2',
+			sbbs_file2='$sfile_name2',
+			content='$content',
+			content_re='$content_re',
+			content_re_s='$content_re_s',
+			main_position='$main_position',
+			sub_position='$sub_position',
+			register=now(),
+			zzim='$zzim',
+			keywords='$keywords'";
+
+	if( $db->insert($table_name, $sql) ) { 
+	
+		
+
+		
+		$tools->alertJavaGo("등록 하였습니다.",$returnURL); } else { $tools->errMsg('비상적으로 입력 되었습니다.');}
+
+} else {
+	$tools->errMsg('경 고 !!!\n\n비정상적으로 접근했습니다.');
+}
+
+include('../footer.php');
+?>

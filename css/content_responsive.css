@@ -1,0 +1,1266 @@
+@charset "utf-8";
+/* *******************************************************
+ * filename : content_responsive.css
+ * description : 서브페이지 컨텐츠 반응형 CSS
+ * date : 2020-11-25
+******************************************************** */
+
+
+/* ******************  서브공통 ********************** */
+/* -------- 공통 스크롤바  -------- */
+@media all and (max-width:1220px){
+	.custom-scrollbar-wrapper .scroll-object{max-width:100%;}
+}
+@media all and (max-width:800px){
+	.custom-scrollbar-wrapper{position:relative;cursor:move}
+	.custom-scrollbar-wrapper .scroll-object{max-width:none; width:800px}
+	.long-tbl .custom-scrollbar-cover,
+	.custom-scrollbar-cover{display:block; }
+
+	.mCSB_inside > .mCSB_container{width:800px !important}
+}
+
+/* -------- 공통 :: 탭 -------- */
+@media all and (max-width:1220px){
+	.sub-tab-list-style .area{padding:0; background-color:#fff}
+}
+@media all and (max-width:1024px){
+	/* Tab Fixed Move*/
+	.sub-tab-list-style.top-fixed{top:60px;}
+}
+@media all and ( max-width: 800px ){
+	/* Tab 공통 스타일 */
+	.sub-tab-wrapper-style,
+	.sub-tab-list-style.top-fixed,
+	.sub-tab-list-style ul li a{height:40px; }
+	.sub-tab-list-style ul li a em{font-size:13px}
+	.sub-tab-list-style .area{padding:0 30px}
+	.sub-tab-list-style.top-fixed .area{padding:0}
+	/* Tab Fixed Move*/
+	/* Mobile Tab Drop Menu */
+	.sub-drop-menu-style{position:relative; z-index:99}
+	.sub-drop-open-btn-style{display:block; position:relative; padding:0 30px; height:40px; line-height:40px; font-size:15px; background-color:#333; box-sizing:border-box;}
+	.sub-drop-open-btn-style span{color:#fff; }
+	.sub-drop-open-btn-style .arrow{color:#fff; position:absolute; top:50%; right:30px; margin-top:-7px}
+	.sub-drop-open-btn-style.open .arrow{transform:rotate(180deg)}
+	.sub-drop-menu-style ul{display:none; margin:0; height:auto; position:absolute; top:100%; left:0px; right:0px; background-color:#fff; border:1px solid #ddd; border-top:0; z-index:11; box-sizing:border-box;}
+	.sub-drop-menu-style ul li{position:static; display:block; float:none; border:0; border-top:1px solid #eee; width:auto; background-color:transparent}
+	.sub-drop-menu-style ul li:first-child{border-top:0; border-left:0}
+	.sub-drop-menu-style ul li a{display:block; width:auto; height:auto; padding:10px 30px; border:0;}
+	.sub-drop-menu-style ul li a em{font-size:13px; color:#606060}
+	.sub-drop-menu-style ul li.selected a{background-color:transparent;}
+	.sub-drop-menu-style ul li.selected a em{color:#9cc813; font-weight:600; }
+
+	.sub-drop-menu-style ul{left:30px; right:30px; width:auto}
+	.sub-tab-list-style.top-fixed ul{left:0; right:0; width:100%}
+	.sub-tab-list-style ul li a:after{display:none}
+}
+@media all and (max-width:480px){
+	/* Tab Fixed Move*/	
+	.sub-tab-list-style.top-fixed{top:60px;}
+}
+
+/* 공동 dot */
+@media all and (max-width:800px){	
+	.double-dot{padding-left:15px}
+	.double-dot:before{width:6px; height:14px}
+}
+/* ******************  N-BIOTEK ********************** */
+/* ------------------- about us -------------- */
+@media all and (max-width:1024px){
+	.partners-tab-con #globalMapCon {height:850px;}
+	.partners-tab-con .global-country {bottom:0;}
+}
+@media all and (max-width:800px){
+	/* 컨텐츠01 :: about us */
+	.about-page{margin-top:60px}
+	.about-page .tab-tit{font-size:17px; margin-bottom:20px}
+	.about-us-con .txt-box{margin-top:30px; text-align:center; }
+	.about-us-con .txt-box .tit{font-size:27px}
+	.about-us-con .txt-box .txt{font-size:13px; margin-top:10px}
+	/* 컨텐츠01 :: about us :: Philosophy */
+	.philosophy-con{margin-top:60px}
+	.philosophy-con .con-tit{font-size:17px; margin-bottom:15px; padding-left:13px}
+	.philosophy-con .con-tit:before{width:6px; height:14px}
+	.philosophy-con .philosophy-list{display:block; margin:0}
+	.philosophy-list .con-box-wrap{width:100%; margin:0 0 10px; }
+	.philosophy-con .philosophy-list .con-box-wrap .sub-txt-box{padding:5% calc(55px + 5%)  5% 5%}
+	.philosophy-con .philosophy-list .con-box-wrap .sub-txt-box .sub-tit{font-size:16px; margin-bottom:5px}
+	.philosophy-con .philosophy-list .con-box-wrap .sub-txt-box .sub-txt{font-size:13px}
+	.philosophy-con .philosophy-list .con-box-wrap .sub-icon-box{right:5%}
+	.philosophy-con .philosophy-list .con-box-wrap .sub-icon-box img{height:50px}
+	/* 컨텐츠01 :: about us :: 도식화 */
+	.about-us-img-con{padding:30px 0; margin-top:30px}
+
+	/* 컨텐츠02 :: history */
+	.history-tab-con{padding-top:80px}
+	.history-con-wrap{margin-bottom:30px}
+	.history-con-wrap > div{float:none; width:100%}
+	.history-con-wrap .tit-wrap{padding:0 0 5%}
+	.history-con-wrap .tit-wrap .tit-box h4{font-size:24px; margin-top:15px}
+	.history-con-wrap .tit-wrap .tit-box .txt{font-size:13px}
+	.history-con-wrap .tit-wrap img{max-width:460px; width:100%}
+	.history-con-wrap .history-list-wrap{margin-left:5px}
+	.history-con-wrap .history-list-wrap .history-item {margin-bottom:20px;}
+	.history-con-wrap .history-list-wrap .history-item:after{width:5px; height:5px; left:-2px}
+	.history-con-wrap .history-list-wrap .history-item:first-child:after{border-width:6px; left:-8px}
+	.history-con-wrap .history-list-wrap .history-item .year{font-size:16px; top:3px}
+	.history-con-wrap .history-list-wrap .history-item .txt{font-size:13px; padding-left:80px}
+
+	/* 컨텐츠03 :: PATENT & CERTIFICATE */
+	.about-page .tab-tit.big{font-size:18px; margin-bottom:20px}
+	.about-page .tab-txt{font-size:13px;}
+	.about-page .tab-txt br{display:none}
+	.certifi-tab-con{padding-top:50px}
+	.certifi-list-style05{padding-top:30px}
+
+	/* 컨텐츠04 :: PARTNERS */
+	.partners-tab-con{padding-top:80px}
+	.partner-list-wrap{margin:30px -2%}
+	.partner-list-wrap li{width:21%; margin:0 2%}
+	.partner-list-wrap li .logo-wrap span { top:15%; left:10%; right:10%; bottom:15%;}
+	.partners-tab-con #globalMapCon{padding:30px 0; height:650px;}
+	.partners-tab-con .global-map-con{margin:0}
+	.partners-tab-con .global-country{margin-bottom:0}
+}
+@media all and (max-width:480px){	
+	/* 컨텐츠04 :: PARTNERS */
+	.partner-list-wrap li{width:29.33%}
+}
+
+
+/* -------- Lab Equipment Intro 페이지 -------- */
+/* 비주얼 */
+@media all and ( max-width: 1024px ){	
+	#introVisual .equipment-search-box .inner{padding:0 15px}
+}	
+@media all and ( max-width: 800px ){	
+	#introVisual{height:600px !important}
+	#introVisual .txt-con{margin-top:-40px}
+	#introVisual .txt-con h3{font-size:40px; padding-bottom:10px}
+	#introVisual .txt-con p{font-size:13px; margin-top:15px}
+	#introVisual .view-txt{bottom:60px}
+	#introVisual .view-txt b{font-size:10px; margin-bottom:6px}
+	#introVisual .view-txt i{font-size:12px}
+}
+
+
+
+
+
+/* 아코디언 */
+@media all and ( max-width: 1220px ){	
+	/* 아코디언 :: 타이틀 및 내용 */
+	.accordion-item .accordion-info-box dl dt{font-size:45px}
+	.accordion-item .accordion-info-box dl .accordion-info-txt{font-size:16px}
+}
+@media all and ( max-width: 1024px ){	
+	/* 아코디언 전체 레이아웃 */
+	.accordion-list .accordion-item{display:block; width:100% !important; height:auto; margin-top:10px; padding-left:0; }
+	.accordion-list .accordion-item:first-child{margin-top:0}
+	.accordion-list .accordion-item .accordion-inner{background-image:none;}
+	.accordion-list .accordion-item .accordion-m-img{height:0; padding-top:110px; background-size:cover !important; transition:padding 0.4s;}
+	.accordion-list .accordion-item.active-item .accordion-inner{cursor:default;}
+	.accordion-list .accordion-item.active-item .accordion-m-img{padding-top:70%}
+
+	/* 아코디언 :: 타이틀 및 내용 */
+	.accordion-item .accordion-inner .accordion-tit{transform:rotate(0); text-align:left; top:50%; margin-left:0; margin-top:-10px; left:15px}
+	.accordion-item .accordion-inner .accordion-arrow{right:15px; left:auto; bottom:auto; top:50%; margin-top:-10px; transform:rotate(90deg)}
+	.accordion-item .accordion-info-box:before{height:100%;}
+	.accordion-item .accordion-info-box dl{padding:30px 15px}
+	.accordion-item .accordion-info-box dl dt{font-size:30px}
+	.accordion-item .accordion-info-box dl .accordion-info-tit{font-size:17px}
+}
+@media all and ( max-width: 800px ){	
+	/* 아코디언 :: 타이틀 및 내용 */
+	.accordion-list-box{margin-bottom:100px}
+	.accordion-list .accordion-item .accordion-m-img{padding-top:80px}
+	.accordion-item .accordion-inner .accordion-tit b{font-size:18px}
+	.accordion-item .accordion-inner .accordion-tit b sub{font-size:12px; position:relative; bottom:3px}
+	.accordion-item .accordion-inner .accordion-arrow{font-size:18px}
+	.accordion-item .accordion-info-box dl dt{font-size:25px; margin-bottom:10px}
+	.accordion-item .accordion-info-box dl dt sub{font-size:12px}
+	.accordion-item .accordion-info-box dl .accordion-info-txt{font-size:14px; margin-top:5px}
+	.accordion-item .accordion-inner .more-btn{font-size:12px; padding-bottom:8px; margin-top:20px}
+}
+@media all and ( max-width: 480px ){	
+	/* 아코디언 전체 레이아웃 */
+	.accordion-list .accordion-item .accordion-m-img{padding-top:80px;}
+
+	/* 아코디언 :: 타이틀 및 내용 */
+	.accordion-item .accordion-inner .more-btn{margin-top:10px}
+	.accordion-item .accordion-info-box dl .accordion-info-txt{display:none}
+}
+
+
+/* ****************** Equiptment :: Validation 추가 220523 ********************** */
+@media all and (max-width:1260px){
+	/* con02 */
+	.validation-con02 .txt-box .txt-item  {padding:35px;}
+	.validation-con02 .txt-box .txt-item02 .txt {font-size:18px;}
+	/* con04 */
+	.validation-con04 .img-box  {padding-right:0;}
+	.validation-con04 .txt-box {padding: 0 5%;}
+	/* con05 */
+	.validation-con05 .con-box .center-img {width:35%;}
+	.validation-con05 .con-box .item:nth-child(odd) {padding-right:17.5%;}
+	.validation-con05 .con-box .item:nth-child(even) {padding-left:19.5%;}
+	.validation-con05 .con-box .item:nth-child(even) dl ,
+	.validation-con05 .con-box .item:nth-child(odd) dl  {padding:0;}
+	.validation-con05 .con-box .item:nth-child(even) .icon {left:0;}
+	.validation-con05 .con-box .item .tit  {position:relative; padding-left:64px; font-size:24px; display:inline-block;}
+	
+}
+@media all and (max-width:1024px){
+	.validation-page {padding-bottom:100px;}
+	/* con02 */
+	.validation-con02 .txt-box .txt-item .txt {line-height:1.5; margin-top:10px;}
+	.validation-con02 .txt-box .txt-item .txt:first-child {margin-top:0;}
+	.validation-con02 .txt-box .txt-item .txt:before {top:10px;}
+	html[lang="en"] .validation-con02 .txt-box .txt-item .txt span {display:block; width:auto;}
+	/* con03 */
+	.validation-eq-list li .over-info-con {padding:0 15px;}
+	.validation-eq-list li .over-info-con:before {left:15px;}
+	.validation-eq-list li .over-info-con .more-plus-icon {right:15px;}
+	/* con04 */
+	.validation-con04 .con-box  {display:block;}
+	.validation-con04 .img-box {width:100%;}
+	.validation-con04 .img-box .img  {padding-top:97.79%;}
+	.validation-con04 .txt-box {width:100%; max-width:100%; margin-top:30px;}
+	/* con05 */
+	.validation-con05 .con-box .center-img  {position:static; transform:none; text-align:center; width:100%;}
+	.validation-con05 .con-box .center-img .pc-ver {display:none;} 
+	.validation-con05 .con-box .center-img .m-ver {display:inline;} 
+	.validation-con05 .con-box .list-box {display:block; margin-top:50px; }
+	.validation-con05 .con-box .item:nth-child(odd) ,
+	.validation-con05 .con-box .item:nth-child(even) {padding:0}
+	.validation-con05 .con-box .item01,.validation-con05 .con-box .item02 {margin-bottom:0;}
+	.validation-con05 .con-box .item {width:100%; margin-top:20px;}
+	.validation-con05 .con-box .item01 { margin-top:0;}
+	.validation-con05 .con-box .item .icon { top:-3px;}
+	.validation-con05 .con-box .item .tit br {display:none;}
+
+}
+@media all and (max-width:800px){
+	.validation-page .content-tit {font-size:27px; margin:30px 0;}
+	.validation-page .inquiry-btn {font-size:14px; width:237px; margin-top:30px;}
+	.validation-page .inquiry-btn i  {font-size:14px;}
+	/* con01 */
+	.validation-con01 {padding:40px 0;}
+	.validation-con01 .top-logo img {height:50px;}
+	.validation-con01 .txt {font-size:15px; margin-top:25px;}
+	/* con02 */
+	.validation-con02 .txt-box {margin-top:40px;}
+	.validation-con02 .txt-box .txt-item .txt {padding-left:15px; }
+	.validation-con02 .txt-box .txt-item .txt:before {top:7px;}
+	.validation-con02 .txt-box .txt-item01 {padding-right:0;}
+	.validation-con02 .txt-box .txt-item01 .txt  {font-size:13px;}
+	.validation-con02 .txt-box .txt-item02 .txt  {font-size:15px; font-size:13px;}
+	/* con03 */
+	.validation-con03 {margin-top:75px; }
+	.validation-con03 .txt-box .txt {font-size:20px; font-size:18px; margin-bottom:30px;}
+	.validation-con03 .con-box {margin-top:65px;}
+	.validation-con03 .con-box > .tit {font-size:18px;}
+	.validation-con03 .con-box .list-box {margin-top:30px;}
+	.validation-eq-list {flex-wrap:wrap; margin:-1%;}
+	.validation-eq-list li {margin:1%; width:48%;}
+	.validation-eq-list li .over-info-con .tit {font-size:17px;}
+	.validation-eq-list li .over-info-con .info  {font-size:13px;}
+	/* con04 */
+	.validation-con04 {margin-top:100px;}
+	.validation-con04 .txt-box .tit {font-size:23px; }
+	.validation-con04 .txt-box .num {font-size:19px;}
+	.validation-con04 .txt-box .txt {font-size:13px; }
+	.validation-con04 .list-box {margin-top:35px;}
+	.validation-con04 .list-box .item {margin-top:20px;}
+	/* con05 */
+	.validation-con05 {padding:150px 0 100px;}
+	.validation-con05 .con-box .con-tit {font-size:24px;}
+	.validation-con05 .con-box .center-img  {width:50%; margin:30px auto;}
+	.validation-con05 .con-box .item .icon {width:35px; background-size:100% auto; top:-3px;}
+	.validation-con05 .con-box .item .tit {font-size:17px; padding-left:50px;}
+	.validation-con05 .con-box .item .txt {font-size:13px; margin-top:10px;}
+	/* con06 */
+	.validation-con06 {padding:100px 0;}
+	.validation-con06 .con-box .item dd {display:block; padding-right:0;}
+	.validation-con06 .con-box .item .num {font-size:19px; width:100%;}
+	.validation-con06 .con-box .item .txt {font-size:13px; width:100%;}
+	/* con07 */
+	.validation-con07 .tit {font-size:18px;}
+	.validation-con07 .list-box {margin-top:30px;}
+	.validation-con07 .list-box .img-list  {margin: -1%;}
+	.validation-con07 .list-box .img-list li {width:48%; margin: 1%;}
+}
+@media all and (max-width:640px){
+	/* con02 */
+	.validation-con02 .txt-box {display:block; }
+	.validation-con02 .txt-box .txt-item {width:100%;padding:20px 15px 30px;}
+	.validation-con02 .txt-box .txt-item01 {padding-bottom:0;}
+}
+
+@media all and (max-width:480px){
+	/* con06 */
+	.validation-con06 .con-box {display:block; margin:-10px 0; }
+	.validation-con06 .con-box .item {width:100%;margin:10px 0 20px;;}
+}
+
+
+
+/* ******************  Stem Cell ********************** */
+/* ------------------- What is Stem Cell -------------- */
+@media all and ( max-width: 800px ){	
+	/* 공통 */
+	.stem-big-tit{font-size:27px}
+	.stem-cm-txt{font-size:13px}
+	.stem-cm-txt.sm{font-size:12px}
+	.stem-cm-tit{font-size:17px; }
+	.stem-blue-txt{font-size:15px; }
+	/* 섹션01 :: 그래프 */
+	.stem-about-01 {text-align:center;}
+	.stem-about-01 .stem-big-tit{margin-bottom:10px}
+	.stem-about-01 .stem-graph{margin-top:20px; padding:25px 0}
+	.stem-about-01 .stem-graph > div > div{display:block; width:100%;}
+	.stem-about-01 .stem-graph > div .lf-img{padding:0 0 5%; text-align:center}
+	.stem-about-01 .stem-graph > div .rt-txt p{margin-bottom:10px}
+	/* 섹션02 :: Types of stem cell */
+	.stem-about-02{margin-top:60px}
+	.stem-about-02 .type-list{margin-top:30px}
+	.stem-about-02 .type-list li .txt{margin-top:20px}
+	.stem-about-02 .type-list li .txt dt{margin-bottom:15px}
+	.stem-about-02 .type-list li .txt dd p:before{top:8px}
+	/* 섹션03 :: Origins of Adult stem cell */
+	.stem-about-03{margin-top:90px}
+	.stem-about-03 .origins-list{margin:30px 0 0}
+	.stem-about-03 .origins-list li{width:100%; margin:0 0 10px}
+	.stem-about-03 .origins-list li .inner{padding:20px 5% 20px 6%}
+	.stem-about-03 .origins-list li .inner .lf-img{width:25%}
+	.stem-about-03 .origins-list li .inner .rt-txt{padding-left:5%}
+	.stem-about-03 .origins-list li .inner .rt-txt dt{margin-bottom:15px}
+	.stem-about-03 .origins-list li .inner .rt-txt dd p{padding-left:18px}
+	.stem-about-03 .origins-list li .inner .rt-txt dd p:before{font-size:12px; top:0}
+	/* 섹션04 :: CHARACTERISTICS OF STEM CELL */
+	/* 01 */
+	.stem-about-04{margin-top:90px}
+	.stem-about-04 .character-01{padding:35px 0; margin-top:20px}
+	.stem-about-04 .character-con .top-num-txt {text-align:center;}
+	.stem-about-04 .character-con .top-num-txt .num{font-size:16px; padding-left:42px; float:none; width:100%}
+	.stem-about-04 .character-con .top-num-txt .num em{font-size:13px; top:-5px; width:33px; height:33px; line-height:33px;}
+	.stem-about-04 .character-con .top-num-txt .num em:after{left:1px}
+	.stem-about-04 .character-con .top-num-txt .txt{float:none; width:100%; margin-top:15px}
+	.stem-about-04 .character-01 .center-img{margin-top:45px}
+	.stem-about-04 .character-01 .center-img .pc{display:none}
+	.stem-about-04 .character-01 .center-img .mb{display:inline-block; width:auto;}
+	/* 02 */
+	.stem-about-04 .character-02{padding:50px 0}
+	.stem-about-04 .character-02 .center-img{margin-top:35px}
+	.stem-about-04 .character-02 .center-img .pc{display:none}
+	.stem-about-04 .character-02 .center-img .mb{display:inline-block}
+	/* 03 */
+	.stem-about-04 .character-03{padding:45px 0}
+	.stem-about-04 .character-03 .center-img{margin-top:40px}
+	.stem-about-04 .character-03 .center-img .pc{display:none}
+	.stem-about-04 .character-03 .center-img .mb{display:inline-block; width:auto;}
+
+	/* 섹션05 :: FUNCTION OF STEM CELL */
+	.stem-about-05{padding:70px 0}
+	.stem-about-05 .function-img{margin-top:40px}
+	
+	/* 섹션06 :: Potential Uses of Stem Cells */
+	.stem-about-06{padding-top:40px}
+	.stem-about-06 .sec-tit{font-size:18px; margin-bottom:30px; text-align:center; }
+	.stem-about-06 .potential .pc{display:none}
+	.stem-about-06 .potential .mb{display:inline-block}
+}
+@media all and ( max-width: 640px ){	
+	/* 섹션02 :: Types of stem cell */
+	.stem-about-02 .type-list{margin:30px 0 0; display:block}
+	.stem-about-02 .type-list li{margin:0 0 30px; width:100%}
+}
+
+/* ------------------- R&D Center -------------- */
+@media all and ( max-width: 1024px ){	
+	/* 탭컨텐츠 */
+	/* LICENSE */
+	.rnd-license-con .license-wrap .rt-img{right:-50px}
+}
+@media all and ( max-width: 800px ){	
+	/* 상단 */
+	.rnd-top-con{padding:60px 0; text-align:center;}
+	.rnd-top-con .big-tit{font-size:27px; margin-bottom:30px}
+	.rnd-top-con .stem-cm-txt span{margin-bottom:15px}
+	.rnd-top-con .rnd-btn a{font-size:13px; width:260px; height:40px; line-height:40px; padding-left:20px; margin-top:70px}
+	.rnd-top-con .rnd-btn a i{font-size:17px; right:20px; margin-top:-9px}
+	/* 탭컨텐츠 */
+	.rnd-tab-con.view-detail-container{margin-top:55px}
+	.rnd-tab-con.view-detail-container .sub-tab-con,
+	.rnd-tab-con.view-detail-container .sub-tab-con:not(#rndCon1){padding-top:60px !important}
+	/* LICENSE */
+	.rnd-license-con .license-wrap{display:block; margin-top:40px}
+	.rnd-license-con .license-wrap > div{display:block; }
+	.rnd-license-con .license-wrap .rt-img {right:auto; width:100%; margin:30px 0 0; text-align:center; }
+	.rnd-license-con .license-wrap .rt-img .pc-ver {display:none;}
+	.rnd-license-con .license-wrap .rt-img .m-ver {display:inline-block;  box-shadow:0 7px 20px -3px rgb(0 0 0 / 15%); }
+	.rnd-license-con .license-wrap .lf-txt {text-align:center;}
+	.rnd-license-con .license-wrap .lf-txt strong{display:inline-block; font-size:16px; padding-left:37px; padding-bottom:10px}
+	.rnd-license-con .license-wrap .lf-txt strong:before{width:28px; height:28px; top:-4px}
+	.rnd-license-con .license-wrap .lf-txt p{margin-top:20px}
+	/* PATENTS */
+	.rnd-patents-con .top-tit p{margin-top:20px}
+	/* TRAINING */
+	.rnd-training-con{padding-bottom:50px}
+	.rnd-training-con .training-wrap{margin-top:30px}
+	.rnd-training-con .training-wrap > div{display:block; width:100%}
+	.rnd-training-con .training-wrap .lf-txt {padding-right:0; text-align:center;}
+	.rnd-training-con .training-wrap .lf-txt strong{margin-bottom:10px}
+	.rnd-training-con .training-wrap .lf-txt strong i{width:26px; height:26px; font-size:13px; line-height:26px}
+	.rnd-training-con .training-wrap .lf-txt p{padding-top:0}
+	.rnd-training-con .training-wrap .rt-img{margin-top:20px}
+
+}
+
+
+/* ------------------- Stem Cell Total Solution -------------- */
+@media all and ( max-width: 800px ){	
+	/* 섹션01 :: PROCESSING */
+	.stem-solution-01 .top-txt{margin-bottom:35px}
+	.stem-solution-01 .top-txt .stem-cm-txt{margin-top:15px}
+	.stem-solution-01 .process-con{padding:30px 0}
+	.stem-solution-01 .process-con .txt-img-wrap{text-align:center; display:block; margin-bottom:20px}
+	.stem-solution-01 .process-con .txt-img-wrap > div{display:block; }
+	.stem-solution-01 .process-con .txt-img-wrap .img-con{width:100%}
+	.stem-solution-01 .process-con .txt-img-wrap .txt-con{padding:30px 0 0}
+	.stem-solution-01 .process-con .txt-img-wrap .txt-con .stem-cm-txt p{margin-top:10px}
+	/* 진행그래프 */
+	.stem-solution-01 .process-con .time-table-wrap .table-inner{padding:20px}
+
+	/* 섹션02 :: PROCESSING FACILITY */
+	.stem-solution-02{padding-top:35px}
+	.stem-solution-02 .center-img{margin-top:40px}
+	
+	/* 섹션03 :: STEMPIA SYSTEM */
+	/* SVF, PRP */
+	.stem-solution-03{margin-top:65px}
+	.stem-solution-03 .system-explain-wrap{margin-top:30px}
+	.stem-solution-03 .system-con{border-radius:20px; padding:20px; margin-bottom:15px}
+	.stem-solution-03 .system-con .top-tit{padding-bottom:15px}
+	.stem-solution-03 .system-con .top-tit strong{font-size:20px; display:block; margin:0 0 5px}
+	.stem-solution-03 .system-con .system-inner{padding-left:0; position:relative}
+	.stem-solution-03 .system-con .system-inner > div{display:block; text-align:center}
+	.stem-solution-03 .system-con .system-inner .md-txt b{font-size:16px}
+	.stem-solution-03 .system-con .system-inner .md-txt p{margin-top:10px}
+	.stem-solution-03 .system-con .system-inner .lf-img{width:100%; padding:0;}
+	.stem-solution-03 .system-con .system-inner .md-txt{margin:30px 0}
+	.stem-solution-03 .system-con .system-inner .rt-img{width:100%; text-align:center;}
+	.stem-solution-03 .system-con .system-inner .lf-img img, .stem-solution-03 .system-con .system-inner .rt-img img{max-height:240px}
+	/* SOFTWARE, HARDWARE */
+	.stem-solution-03 .system-box{padding-top:20px}
+	.stem-solution-03 .system-box li{width:100%; margin:0 0 10px; min-height:auto}
+	.stem-solution-03 .system-box li .inner .icon{height:40px}
+	.stem-solution-03 .system-box li .inner strong{padding:15px 0 10px}
+	/* Strong Point */
+	.stem-solution-03 .strong-point{margin-top:40px}
+	.stem-solution-03 .strong-point .lf-tit{display:block; width:100%; font-size:17px; margin-bottom:20px; float:none}
+	.stem-solution-03 .strong-point .rt-txt{float:none; width:100%}
+	.stem-solution-03 .strong-point .rt-txt li{padding:20px 0}
+	.stem-solution-03 .strong-point .rt-txt li dl{padding-left:40px}
+	.stem-solution-03 .strong-point .rt-txt li dl:before{width:27px; height:25px;}
+	.stem-solution-03 .strong-point .rt-txt li dl dt{font-size:15px; padding-bottom:5px}
+	/* 섹션04 :: MAIN PRODUCT */
+	.stem-solution-04{margin-top:60px}
+	.stem-solution-04 .top-txt h4{margin-bottom:20px}
+	.stem-solution-04 .solution-prd-list{margin-top:30px; display:flex; flex-wrap:wrap}
+	.stem-solution-04 .solution-prd-list li{width:50%}
+	.stem-solution-04 .solution-prd-list li img{width:100%; height:100%}
+	.stem-solution-04 .prd-item{margin-top:55px}
+	.stem-solution-04 .prd-item .stem-blue-txt{margin-bottom:15px}
+	.stem-solution-04 .prd-item .prd-detail{padding-top:20px}
+	.stem-solution-04 .prd-item .prd-detail .lf-tit{width:100%; float:none; font-size:14px}
+	.stem-solution-04 .prd-item .prd-detail .rt-con{float:none; width:100%; margin-top:10px}
+	/* LED CELL ACTIVATOR (LCA) */
+	.stem-solution-04 .prd-item.prd-02 .prd-detail .rt-con .graph-img{margin:30px -1%}
+	.stem-solution-04 .prd-item.prd-02 .prd-detail .rt-con .graph-img li{width:48%; margin:0 1%}
+	.stem-solution-04 .prd-item.prd-02 .prd-detail .rt-con .graph-img li:first-child{margin:0 1%}
+	.stem-solution-04 .prd-item .prd-detail .rt-con .stem-cm-txt.sm-02{font-size:12px;}
+	/* STEMPIA KIT */
+	.stem-solution-04 .prd-item.prd-03 .prd-detail{padding:20px 0}
+	.stem-solution-04 .prd-item.prd-03 .prd-detail .rt-con{width:100%}
+	/* 섹션05 :: GALLERY */
+	.solution-tab-con{margin-top:100px}
+	.solution-tab-con .view-detail-container{margin-top:40px}
+	.solution-tab-con .view-detail-container .sub-tab-con#galleryStandard{padding-top:40px}
+	.gallery-slide-wrap{padding-bottom:60px}
+	.gallery-slide-wrap .gallery-arrow .slide-tit{font-size:16px}
+	.gallery-slide-wrap .gallery-arrow{width:240px; height:50px; padding:0 20px; bottom:34px}
+	.gallery-slide-wrap .gallery-arrow .arrow{width:90px}
+	.gallery-slide-wrap .gallery-arrow .arrow a{font-size:20px}
+	.gallery-slide-wrap .gallery-arrow .arrow a.prev{margin-right:15px}
+	#galleryPremium{padding-bottom:50px}
+}
+@media all and ( max-width: 480px ){		
+	/* LED CELL ACTIVATOR (LCA) */
+	.stem-solution-04 .prd-item.prd-02 .prd-detail .rt-con .graph-img{margin:30px 0}
+	.stem-solution-04 .prd-item.prd-02 .prd-detail .rt-con .graph-img li{float:none; width:100%; margin:0; text-align:center}
+	.stem-solution-04 .prd-item.prd-02 .prd-detail .rt-con .graph-img li:first-child{margin:0 0 45px}
+	/* STEMPIA KIT */
+	.stem-solution-04 .prd-item.prd-03 .prd-detail .rt-con .graph-img{margin:30px 0}
+	.stem-solution-04 .prd-item.prd-03 .prd-detail .rt-con .graph-img li{float:none; width:100%; margin:0; text-align:center}
+	.stem-solution-04 .prd-item.prd-03 .prd-detail .rt-con .graph-img li:first-child{margin-bottom:45px}
+	.stem-solution-04 .prd-item.prd-03 .prd-detail .rt-con .img-list li{max-width:none; width:100%; text-align:center}
+	.stem-solution-04 .prd-item.prd-03 .prd-detail .rt-con .img-list li:first-child{margin:0 0 30px}
+	.stem-solution-04 .prd-item.prd-03 .prd-detail .rt-con .img-list li p{margin-top:15px}
+}
+
+
+/* ------------------- ISSCA -------------- */
+@media all and ( max-width: 1380px ){	
+	/* global map */
+	.issca-global .global-map-con{left:60px}
+	/* GALLERY */
+	.issca-gallery .issca-gallery-slide{padding:0 30px}
+	.issca-gallery .issca-gallery-slide .slick-arrow.slick-next{right:-10px}
+	.issca-gallery .issca-gallery-slide .slick-arrow.slick-prev{left:-10px}
+}
+@media all and ( max-width: 1220px ){	
+	/* global map */
+/* 	.issca-global .global-map-con{display:none}
+	.issca-global .tb-img{display:block} */
+	.issca-global #globalMapCon{padding:0}
+	.issca-global .global-map-con{display:none}
+	.issca-global .mb-global-con{display:block; position:relative; }
+	.issca-global .mb-global-con img { max-width:100%}
+	#globalPop .modal-close-btn {top:-45px;}
+	
+	.issca-global .mb-global-con {position:relative; display:inline-block; }
+	.mb-global-con .nation-circle { width:8.75%; height:10.57%; transform:none;}
+	.mb-global-con .nation-circle .effect-circle {top:50%; left:50%; position:absolute;  width:100%; height:100%;}
+	.mb-global-con .nation-circle .effect-circle i {width:6px; height:6px; margin:-2px 0 0 -2px;}
+	.nation-circle .effect-circle > span {-webkit-animation-name:nation-circle2; animation-name: nation-circle2;}
+	@keyframes nation-circle2 {
+	  0% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+		opacity: 0.5; 
+	   }
+	  50% {
+		opacity: 1.0; 
+	   }
+	  100% {
+		-webkit-transform: scale(0.7);
+		transform: scale(0.7);
+		opacity: 0;
+		} 
+	}
+}
+@media all and ( max-width: 800px ){	
+	/* Application */
+	.issca-app{margin-top:55px; }
+	.issca-app .tit{font-size:16px; margin-bottom:10px; text-align:center;}
+	.issca-app .issca-check-box{border-width:5px; padding:20px; display:block}
+	.issca-app .issca-check-box > div{display:block;}
+	.issca-app .issca-check-box .lf-logo{width:100%; }
+	.issca-app .issca-check-box .rt-txt{padding:20px 0 0}
+	.issca-app .issca-check-box .rt-txt p{font-size:13px; padding-left:18px}
+	.issca-app .issca-check-box .rt-txt p:before{font-size:12px; top:2px}
+	.issca-app .txt-con p{margin-top:15px; text-align:center;}
+	.issca-app .icon-box-list{margin-top:30px}
+	.issca-app .icon-box-list li .icon{height:50px}
+	.issca-app .icon-box-list li .stem-cm-txt{margin-top:20px}
+	/* Video */
+	.stem-cm-tit.sm{font-size:17px}
+	.issca-video{margin-top:90px}
+	.issca-video .video-iframe-wrapper{margin-top:30px}
+	.video-cover-box .icon img{height:70px}
+	/* global map */
+	.issca-global{margin-top:65px}
+	#globalPop .modal-close-btn {top:-28px;}
+
+
+	/* GALLERY */
+	.issca-gallery{margin:70px 0}
+	.issca-gallery .issca-gallery-slide{margin:40px -5px 0; padding:0 20px}
+	.issca-gallery .issca-gallery-slide li{margin:0 5px}
+	.issca-gallery .issca-go-btn a{margin-top:35px; font-size:13px; height:40px ;line-height:38px; padding:0 15px}
+	.issca-gallery .issca-go-btn a i{font-size:17px; margin-left:15px; position:relative; top:-1px}
+	.issca-gallery .issca-gallery-slide .slick-arrow{font-size:20px}
+	.issca-gallery .issca-gallery-slide .slick-arrow.slick-next{right:-5px}
+	.issca-gallery .issca-gallery-slide .slick-arrow.slick-prev{left:-5px}
+	.issca-gallery .slick-dots{margin-top:20px}
+	.issca-gallery .slick-dots li button{width:7px; height:7px; }
+}
+@media all and ( max-width: 640px ){	
+	/* Application */
+	.issca-app .icon-box-list{display:block}
+	.issca-app .icon-box-list li{width:100%; border-right:0; border-bottom:2px solid #e9e9e9}
+	.issca-app .icon-box-list li:last-child{border-bottom:0}
+}
+
+
+/* ****************** Stem Cell Business ********************** */
+/* -------- 공통 :: Title & Text -------- */
+@media all and (max-width:800px){
+	.stem-business-tit {font-size:22px; }
+	.stem-business-tit.small {font-size:20px;}
+	.stem-business-txt {font-size:13px;}
+	.stem-business-tit + .stem-business-txt {margin-top:8px;}
+
+	.stemcell-business-tit-box {text-align:center;}
+}
+
+/* -------- 공통 :: Layout -------- */
+@media all and (min-width:1261px){
+	#leftMenu.absolute {position:absolute; bottom:0px; top:auto;}
+	#leftMenu.absolute .inner-box {height:100%;}
+	#leftMenu.absolute .bottom-txt-box {bottom:50px;}
+}
+@media all and (max-width:1780px){
+	.stemcell-business-content .area {padding:0 50px; -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	 box-sizing: border-box; }
+}
+@media all and (max-width:1536px){
+	.stemcell-business-container {padding-left:50px;}
+	#leftMenu {transform:translateX(-340px);}
+	#leftMenu.open {transform:translateX(0);}
+	#leftMenu .open-btn {display:block;}
+	#leftMenu .menu-box{opacity:0;}
+	#leftMenu.open .menu-box {opacity:1;}
+}
+
+@media all and (max-width:1260px){
+	#leftMenu {width:100%; height:50px; min-height: auto; transform:none;  background:none; background-color:#000; z-index:100;}
+	#leftMenu .inner-box { display:none; padding:50px 0 ; opacity:0; transition: opacity 0.4s; background:#000 url("/images/content/stemcell_business_left_bg.jpg") no-repeat center / cover;  } 
+	#leftMenu .inner-box:before {display:none;}
+	#leftMenu .go-intro-btn {width:60px; height:60px; margin-left:0; right:30px; left:auto;}
+	#leftMenu .go-intro-btn i {font-size:18px; margin-bottom:0}
+	#leftMenu .top-tit {display:block; margin-top:30px; font-size:14px; padding:0 30px;}
+	#leftMenu .menu-box{visibility: hidden;}
+	#leftMenu .menu-list > li > a {padding:15px 60px 15px 30px; font-size:17px;}
+	#leftMenu .menu-list > li.active > a {font-size:21px;}
+	#leftMenu .menu-list > li.active > a:before {font-size:20px; top:15px; right:30px;} 
+	#leftMenu .menu-list .dep5-menu > li > a {font-size:14px;}
+	#leftMenu .bottom-txt-box {display:none;}
+	#leftMenu .open-btn {margin-top:0; right:auto; left:50%; transform:translateX(-50%); top:14px;}
+
+	/* open */
+	#leftMenu.open {height:auto;}
+	#leftMenu.open .inner-box {opacity:1; }
+	#leftMenu.open .menu-box {visibility:visible;}
+	
+	/*  fixed */
+	#leftMenu.fixed {top:69px;}
+
+	/* 오른쪽 컨텐츠영역 */
+	.stemcell-business-container {padding-top:50px; padding-left:0; min-height:auto; overflow:visible;}
+
+	/* 문의하기 버튼 */
+	.business-inquiry-btn {display:block;}
+}
+@media all and (max-width:1024px){
+	/*  fixed */
+	#leftMenu.fixed {top:60px;}
+	
+	/* 오른쪽 컨텐츠영역 */
+	.stemcell-business-content {padding:70px 0;}
+	.stemcell-business-content .area {padding:0 30px;}
+}
+
+@media all and ( max-width: 480px ){
+	#leftMenu .open-btn .line{width:20px; height:2px;}
+	#leftMenu .open-btn.active .line:nth-child(1){
+		 -webkit-transform: translateY(6px) rotate(45deg);
+		  transform: translateY(6px) rotate(45deg);
+	}
+	#leftMenu .open-btn.active .line:nth-child(3){
+		 -webkit-transform: translateY(-6px) rotate(-45deg);
+		  transform: translateY(-6px) rotate(-45deg);
+	}
+}
+
+/* -------- 공통 :: Intro -------- */
+@media all and (max-width:1780px){
+	.stemcell-intro-item a .txt br {display:none;}
+}
+@media all and (max-width:1024px){
+	.stemcell-intro-con {display:block; min-height:auto; height:auto; padding:24px 30px;}
+	.stemcell-intro-con .bg {display:none;}
+	.stemcell-intro-item {width:100%; border:1px solid #c6c6c6; border-radius:5px; margin-top:10px; -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	 box-sizing: border-box; }
+	.stemcell-intro-item.item01 {background:url("/images/content/stemcell_business_intro_bg_01.jpg") no-repeat center / cover; margin-top:0;}
+	.stemcell-intro-item.item01 .icon {background-image:url("/images/content/stem_intro_icon_01_m.png") !important; }
+	.stemcell-intro-item.item02 {background:url("/images/content/stemcell_business_intro_bg_02.jpg") no-repeat center / cover; }
+	.stemcell-intro-item.item02 .icon {background-image:url("/images/content/stem_intro_icon_02_m.png") !important; }
+	.stemcell-intro-item.item03 {background:url("/images/content/stemcell_business_intro_bg_03.jpg") no-repeat center / cover; }
+	.stemcell-intro-item.item03 .icon {background-image:url("/images/content/stem_intro_icon_03_m.png") !important; }
+	.stemcell-intro-item.item04 {background:url("/images/content/stemcell_business_intro_bg_04.jpg") no-repeat center / cover; }
+	.stemcell-intro-item.item04 .icon {background-image:url("/images/content/stem_intro_icon_04_m.png") !important; }
+	.stemcell-intro-item a .inner-box {display:block;}
+	.stemcell-intro-item a dl {display:flex; align-items:center;}
+	.stemcell-intro-item a dl dt {width:109px; }
+	.stemcell-intro-item a dl dd {width:calc(100% - 109px); }
+	.stemcell-intro-item a:before {display:none;}
+	.stemcell-intro-item a .icon {height:83px;}
+	.stemcell-intro-item a .tit  {font-size:15px; margin-top:0; color: #232323; font-weight:700; text-align:left;}
+	.stemcell-intro-item a .tit br {display:none;}
+	.stemcell-intro-item.item01 a .tit br {display:block;}
+	.stemcell-intro-item a .txt {display:none;}
+}
+@media all and (max-width:480px){
+	/* .stemcell-intro-item a .tit {font-size:3.9583vw;} */
+	
+}
+
+/* -------- 공통 :: Video -------- */
+@media all and (max-width:1260px){
+	.stemcell-business-video-content {padding: 70px 30px 100px;}
+	.stemcell-business-video-content .video-txt-box {display:block;}
+}
+
+/* -------- 공통 :: Reference -------- */
+@media all and (max-width:1366px){
+	.stemcell-business-slide {padding:30px;}
+	.stemcell-business-slide li {margin-top: 20px;}
+	.stemcell-business-slide li:first-child {margin-top: 0;}
+}
+@media all and (max-width:800px){
+	.stemcell-business-slide .slick-dots li {width:8px; height:8px; margin:0 10px;}
+	/* arrows */
+	.stemcell-business-slide .slick-arrow {right:5%; width:40px; height:40px; font-size:20px;}
+	.stemcell-business-slide .slick-arrow.slick-next {bottom:75px;}
+}
+
+
+/* -------- Solutions :: Outline -------- */
+/* 상단 컨텐츠 */
+@media all and (max-width:1536px){
+	.solutions-outline-top-con .img-box {padding:0 5%;}
+	.solutions-outline-top-con .center-img-box .tit {font-size:2.0833vw;} 
+	.solutions-outline-top-con .item-list dl dd {padding:0 1.9531vw}
+	.solutions-outline-top-con .item-list dl dd br {display:none;}
+}
+@media all and (max-width:1024px){
+	.solutions-outline-top-con {margin-top:50px;}
+	.solutions-outline-top-con .con-box {display:block;}
+	.solutions-outline-top-con .img-box {display:none; width:100%; max-width:50%; min-width:280px; margin:auto;}
+	.solutions-outline-top-con .center-img-box .tit {font-size:21px;} 
+	.solutions-outline-top-con .center-img-box .cirlce-box {display:none;}
+	.solutions-outline-top-con .item-box {width:100%; margin-top:50px;}
+	.solutions-outline-top-con .item-list .dot-box {display:none !important;}
+	.solutions-outline-top-con .item-list li  {max-width:100%; margin-top:30px;}
+	.solutions-outline-top-con .item-list li:nth-child(2) {margin-left:0;}
+}
+@media all and (max-width:800px){
+	.solutions-outline-top-con .item-list .tit {font-size:15px;}
+	.solutions-outline-top-con .item-list .txt {font-size:13px; }
+}
+
+@media all and (max-width:480px){
+	.solutions-outline-top-con .item-list dl {display:block; border-radius:0;background-color:none; box-shadow:none; text-align:center;}
+	.solutions-outline-top-con .item-list dl dt {margin:auto;}
+	.solutions-outline-top-con .item-list dl dd {width:100%; margin-top:20px;}
+}
+
+
+/* 하단 컨텐츠 */
+@media all and (max-width:1024px){
+	.solutions-outline-bottom-con {margin-top:100px;}
+	.solutions-outline-bottom-con .con-box {margin:30% -30px;}
+	.solutions-outline-bottom-con .center-box {position:relative; z-index:2;}
+	.solutions-outline-bottom-con .center-box .center-img-inner-box .inner {top: 10px; left: 10px; right: 10px; bottom: 10px; }
+	.outline-cirlcle-item-box {z-index:1;}
+	.outline-circle-item .inner:before{border-width:3px;}
+	.outline-circle-item .inner .txt-box {left:20px; bottom:20px; right:20px;}
+	.outline-circle-item .inner .txt-box .txt {padding:0;}
+}
+@media all and (max-width:800px){
+	.solutions-outline-bottom-con .center-box .tit {font-size:15px;}
+	.solutions-outline-bottom-con .center-box .txt {display:none;}
+	.outline-circle-item .inner .txt-box .tit {font-size:13px;}
+	.outline-circle-item .inner .txt-box .txt {display:none;}
+}
+@media all and (max-width:480px){
+	.solutions-outline-bottom-con .center-box .tit {font-size:3.1250vw;}
+	.outline-circle-item .inner .txt-box {left:0; right:0;}
+	.outline-circle-item .inner .txt-box .tit {font-size:2.7083vw;}
+}
+
+/* -------- Solutions :: Plan -------- */
+@media all and (max-width:800px){
+	/* title box */
+	.solutions-plan-tit-box {padding:70px 0; text-align:center;}
+	/* graph head */
+	.solutions-plan-graph-box .top-box {flex-wrap:wrap; font-size:14px; padding:15px; height:auto;}
+	.solutions-plan-graph-box .tit-col {width:100%; padding:0; margin-bottom:10px;}
+	.solutions-plan-graph-box .tit-col .tit {font-size:13px;}
+	.solutions-plan-graph-box .month-col {width:60px; text-align:left;}
+	.solutions-plan-graph-box .month-col .month {font-size:14px;}
+	.solutions-plan-graph-box .num-col {width:calc(100% - 60px);}
+	/* item common */
+	.solutions-plan-item .row {flex-wrap:wrap; padding:0 15px;}
+	.solutions-plan-item .first-box {padding:20px 15px;}
+	.solutions-plan-item .graph-bar {height:13px;}
+	.solutions-plan-item .row .month-col {text-align:center;}
+	.solutions-plan-item .hidden-item .tit {padding-left:15px;}
+	.solutions-plan-item .hidden-item .tit:before {left:7px; top:6px;}
+}
+
+
+/* -------- System :: Common -------- */
+@media all and (max-width:1780px){
+	.system-prd-top-con .con-box { padding:0 50px;}
+}
+@media all and (max-width:1024px){
+	.system-prd-top-con .con-box {flex-direction: column-reverse; text-align:center;}
+	.system-prd-top-con .con-box .img-box {width:70%; text-align:center; min-width:200px; padding:0;}
+	.system-prd-top-con .con-box .txt-box {width:80%; padding:50px 0; }
+	.system-prd-top-con .con-box .img-box img {max-width:100%;}
+	.system-prd-top-con .con-box .tit {font-size:16px; }
+	.system-prd-top-con .con-box .txt {font-size:13px; }
+}
+@media all and (max-width:800px){
+	.system-prd-tit {font-size:21px;}
+	.system-prd-tit:before {height:20px; top:2px;}
+}
+
+
+/* -------- System :: Outline -------- */
+@media all and (max-width:1024px){
+	/* Top Content */
+	.system-outline-top-con .tit-box {display:block;  text-align:center;}
+	.system-outline-top-con .tit-box .left-box {width:100%; padding-right:0;}
+	.system-outline-top-con .tit-box .left-box img {max-width:50%;}
+	.system-outline-top-con .tit-box .right-box {width:100%; margin-top:30px;}
+	/* Bottom Content */
+	.system-outline-bottom-con .item .txt-box .txt {font-size:13px; }
+	.system-outline-bottom-con .item:nth-child(2) .txt-box .icon {margin-left:17px;}
+	.system-outline-bottom-con .point-box {padding:56px;}
+}
+@media all and (max-width:800px){
+	/* Top Content */
+	.system-outline-top-con .tit-box .txt {font-size:13px;}
+	.system-outline-top-con .img-box {margin-top:40px;}
+	.system-outline-top-con .img-box .inner-box {padding:30px;}
+	/* Bottom Content */
+	.system-outline-bottom-con {margin-top:70px;}
+	.system-outline-bottom-con .item {padding:0 15px}
+	.system-outline-bottom-con .item:nth-child(1) .inner-box:before {display:none;}
+	.system-outline-bottom-con .item .txt-box .tit {font-size:18px;}
+	.system-outline-bottom-con .item .arrow-box {margin-top:20px;}
+	.system-outline-bottom-con .item .arrow-box .img img {height:40px;}
+	.system-outline-bottom-con .point-box {padding:50px 30px;}
+	.system-outline-bottom-con .point-box .point {font-size:16px; line-height: 35px; width: auto; height:35px; padding:0 30px; white-space:nowrap;}
+	.system-outline-bottom-con .point-list li {padding-left:20px; margin-top:20px;}
+	.system-outline-bottom-con .point-list li .tit ,
+	.system-outline-bottom-con .point-list li:before {font-size:15px;}
+	.system-outline-bottom-con .point-list li .txt {font-size:13px;}
+
+
+	.system-outline-bottom-con .item .circle-box {top:-2px; left:-2px; width:102%; height:102%;}
+	.system-outline-bottom-con .item .circle-box .circle {stroke-width: 10px;}
+	.system-outline-bottom-con .item .txt-box .icon {padding-top:44px;}
+	.system-outline-bottom-con .item .txt-box .txt {display:none;}
+}
+@media all and (max-width:480px){
+	.system-outline-bottom-con .item .txt-box .tit {font-size:3.7500vw;}
+	.system-outline-top-con .tit-box .left-box img {max-width:70%;}
+}
+
+
+/* -------- System :: SVF & PRP -------- */
+@media all and (max-width:1260px){
+	.system-svf-prp-con .con-box .txt-box {padding:0 30px;}
+}
+@media all and (max-width:800px){
+	.system-svf-prp-con .tit-box {padding-left:0;}
+	.system-svf-prp-con .tit-box .tit {font-size:23px;}
+	.system-svf-prp-con .tit-box .txt {font-size:13px;}
+	.system-svf-prp-con .con-box  {flex-wrap:wrap; justify-content: center; padding-left:0;}
+	.system-svf-prp-con .con-box .txt-box {width:100%; order:1; padding:0; margin-top:30px; -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	 box-sizing: border-box;  }
+	.system-svf-prp-con .con-box .txt-box .point-tit {padding:0 20px; font-size:14px; line-height:30px;}
+	.system-svf-prp-con .con-box .txt-box .txt {font-size:13px; }
+	.system-svf-prp-con .con-box .left-img-box,
+	.system-svf-prp-con .con-box .right-img-box {width:auto;}
+	.system-svf-prp-con .con-box .right-img-box {margin-left:30px;}
+	.system-svf-con {padding-bottom:45px; margin-bottom:45px; }
+}
+@media all and (max-width:480px){
+	.system-svf-prp-con .tit-box .txt {display:block;margin-left:0; margin-top:10px;}
+	.system-svf-prp-con .con-box {margin-top:30px;}
+	.system-svf-prp-con .con-box .left-img-box,
+	.system-svf-prp-con .con-box .right-img-box {width:calc(50% - 10px);}
+	.system-svf-prp-con .con-box .left-img-box {margin-right:10px;}
+	.system-svf-prp-con .con-box .right-img-box {margin-left:10px;}
+	.system-svf-prp-con .con-box .left-img-box img,
+	.system-svf-prp-con .con-box .right-img-box img {width:100%;}
+}
+
+/* -------- System :: Main Products :: Multi -------- */
+@media all and (max-width:1780px){
+	.system-multi-con01 .con-box .img-box {width:50%; padding:0 30px 0 0; text-align:left; -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	 box-sizing: border-box; }
+	.system-multi-con01 .con-box .img-box img {max-width:100%;}
+	.system-multi-con01 .con-box .txt-box {width:100%; }
+}
+@media all and (max-width:1024px){
+	.system-multi-con01 .con-box {padding:0 30px;}
+	.system-multi-con02 .img-box.m-ver {display:block; padding:6.2500vw 30px 0; text-align:center}
+	.system-multi-con02 .img-box.pc-ver {display:none;}
+	.system-multi-con02 .img-box svg {height:auto !important; width:auto; max-width:100%; }
+}
+@media all and (max-width:800px){
+	.system-multi-con02 {margin-top:45px;}
+	.system-multi-con02 .img-box {margin-top:50px;}
+	.system-multi-con03 {margin-top:100px;}
+	.system-multi-con03 .con-box {margin-top:20px;}
+	.system-multi-list {margin:-2% 0;}
+	.system-multi-list li {width:46%; margin:2%;}
+	.system-multi-list li .num {font-size:13px;}
+	.system-multi-list li .txt {font-size:12px; }
+	.system-multi-list li dl dt:before {width:8.69%; font-size:13px; margin-top:-6.5px;}
+}
+
+/* -------- System :: Main Products :: Kit -------- */
+@media all and (max-width:1780px){
+	.system-kit-con01 .con-box {padding-right:50px;}
+	.system-kit-con02 .tit-box .stem-business-txt {padding-right: 0}
+
+}
+@media all and (max-width:1024px){
+	.system-kit-con01 .con-box {padding-bottom:50px;}
+}
+@media all and (max-width:800px){
+	.system-kit-con02 {margin-top:40px;}
+	.system-kit-con02 .con-box .item {padding:30px 0;}
+	.system-kit-con02 .con-box .item .inner {display:block;}
+	.system-kit-con02 .con-box .item .left-box {width:100%;}
+	.system-kit-con02 .con-box .item .right-box {width:100%; margin-top:15px;}
+	.system-kit-con02 .con-box .item .tit {font-size:15px;}
+	.system-kit-con02 .con-box .item .img-box {width:100%; margin-top:30px;}
+	.system-kit-con02 .con-box .item .img-box .img-list li dd {font-size:13px;}
+	.system-kit-con02 .con-box .item .graph-box {display:block; margin:0;}
+	.system-kit-con02 .con-box .item .graph-item {width:100%; margin:30px 0;  }
+	.system-kit-con02 .con-box .item .graph-item .tit-box .tit {font-size:14px;}
+	.system-kit-con02 .con-box .item .graph-item .tit-box .unit {font-size:12px;}
+	.system-kit-con02 .con-box .item .graph-item.item01 .tit-box .unit b {font-size:17px;}
+	.system-kit-con02 .con-box .item .graph-item.item02 {margin-top:30px;}
+}
+@media all and (max-width:480px){
+	.system-kit-con02 .con-box .item .img-box .img-list {display:block; }
+	.system-kit-con02 .con-box .item .img-box .img-list li {width:100%; margin-top:20px;}
+}
+
+/* -------- System :: Main Products :: Activator -------- */
+@media all and (max-width:1780px){
+	.system-activator-con01 .con-box .txt-box {padding-right:50px;}
+	.system-activator-con01 .con-box .img-box img {max-width:100%;}
+}
+@media all and (max-width:1260px){
+	.system-activator-con02 .graph-box .graph-item {width:48%; }
+}
+ @media all and (max-width:1024px){
+ 	.system-activator-con01 .con-box {padding-bottom:50px;}
+	.system-activator-con01 .con-box .img-box {width:70%;}
+	.system-activator-con01 .con-box .img-box .pc-ver {display:none;}
+	.system-activator-con01 .con-box .img-box .m-ver {display:block; margin-left:-30px; min-width:250px;}
+	.system-activator-con01 .con-box .txt-box {width:70%; padding:50px 0;}
+	.system-activator-con02 .graph-box {/* display:block; */ margin-top:70px;}
+	.system-activator-con02 .stem-business-txt {margin-top:40px;}
+ }
+ @media all and (max-width:800px){
+	.system-activator-con02 .graph-box {display:block; }
+	.system-activator-con02 .graph-box .graph-item {width:100%; }
+	.system-activator-con02 .graph-box .graph-item:last-child {margin-top:50px;} 
+	.system-activator-con02 .graph-item .bar-box {margin-top: 10px;}
+	.system-activator-con02 .graph-item .tit {font-size:13px;}
+ }
+
+/* -------- System :: Main Products :: Customization -------- */
+@media all and (min-width:801px){
+	.stemcell-business-tab-style ul {display:flex; align-items:center; justify-content:center;}
+	.stemcell-business-tab-style ul li {margin:0 10px; border:0; width:240px; height:54px; border:1px solid #d0d0d0; border-radius:50px; -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	 box-sizing: border-box; }
+	.stemcell-business-tab-style ul li a {display:table; width:100%; height:100%; text-align:center; font-size:18px; color:rgba(46,46,46,0.6);}
+	.stemcell-business-tab-style ul li a em {display:table-cell; vertical-align:middle; font-weight:600;}
+	.stemcell-business-tab-style ul li a {color: inherit;}
+	.stemcell-business-tab-style ul li.selected {background-color:#000; color: #fff; border-color:#000;}
+}
+@media all and (max-width:1260px){
+	.system-customization-con .txt-box {padding-left:0;}
+	/* Cell Counting */
+	.system-customization-tab02 .txt-box.in-img-box {padding:40px 0;}
+}
+@media all and (max-width:1024px){
+	.system-customization-con .txt-box .img-item-box .img-item:first-child {margin-left:0;}
+	/* Clean Booth */
+	.system-customization-tab01 .con02 .img-box .inner-box {padding:40px 30px;}
+	/* Cell Counting */
+	.system-customization-tab02 .txt-box .inner {display:block;}
+	.system-customization-tab02 .txt-box .stem-business-txt {width:100%;}
+	.system-customization-tab02 .txt-box .img-item-box {width:100%; justify-content:center; margin-top:30px;}
+	/* Cell Baking */
+	.system-customization-tab03 .txt-box .inner {display:block;}
+	.system-customization-tab03 .txt-box .stem-business-txt {width:100%;}
+	.system-customization-tab03 .img-item-box {width:100%; justify-content:center; margin-top:30px;}
+}
+@media all and (max-width:800px){
+	/* tab Style */
+	.stemcell-business-tab-container .sub-tab-wrapper-style {margin-bottom:30px;}
+	.stemcell-business-tab-style.sub-drop-menu-style ul {left:0; right:0;}
+	/* text Box */
+	.system-customization-con .txt-box {padding:20px 0;}
+	/* img Box */
+	.system-customization-con .txt-box.in-img-box {padding:20px 0;}
+	.system-customization-con .img-item-box .img-item {width:50%; margin-left:10px;}
+	.system-customization-con .img-item-box .img-item .img {border-radius:10px;}
+	.system-customization-con .img-item-box .img-item .txt {font-size:13px;}
+	/* Clean Booth */
+	.system-customization-tab01 .con01 .img-box {padding:50px 30px 10px; }
+	.system-customization-tab01 .con01 .img-box .inner {padding:0}
+	.system-customization-tab01 .con01 .img-box .inner .tit {font-size:16px; position:static;  text-align:center; display:block; margin-bottom: 20px;}
+	.system-customization-tab01 .con02 {margin-top:20px;}
+	.system-customization-tab01 .con02 .num-list li {padding-left:30px;}
+	.system-customization-tab01 .con02 .num-list li .num {width:18px; height:18px; line-height:18px; font-size:12px;}
+	/* Cell Counting */
+	.system-customization-tab02 .img-box .inner { left: 30px; right: 30px; bottom: 30px;}
+	.system-customization-tab02 .img-box .inner .tit { font-size:25px;}
+	/* Cell Baking */
+	.system-customization-tab03 .img-box .inner { left: 30px; right: 30px; bottom: 30px;}
+	.system-customization-tab03 .img-box .inner .tit { font-size:25px;}
+}
+
+@media all and (max-width:480px){
+	/* Cell Baking */
+	.system-customization-tab03 .img-item-box .img-item .img {padding-top:66.66%;}
+}
+
+
+/* -------- Research :: Outline  -------- */
+@media all and (max-width:800px){
+	.research-outline-con .tit-box {text-align:center;}
+	.research-outline-con .certification-box {margin-top:70px;}
+	.research-outline-con .certification-item {width:48%; margin:0 15px;}
+	.research-outline-con .certification-item .tit {font-size:14px; }
+}
+
+/* -------- Banking :: Process  -------- */
+@media all and (max-width:1024px){
+	.banking-process-list {margin:-4% -2%;}
+	.banking-process-list li {width:46%; margin:4% 2%;}
+}
+@media all and (max-width:800px){
+	.banking-process-list li dd {margin-top:15px;}
+	.banking-process-list li .txt-box {margin-top:7px;}
+	.banking-process-list li .tit {font-size:16px;}
+	.banking-process-list li .txt {font-size: 13px;}
+}
+@media all and (max-width:480px){
+	.banking-process-list {display:block; margin:-4% 0;}
+	.banking-process-list li {width:100%; margin:4% 0;}
+}
+
+/* -------- Banking :: Outline  -------- */
+@media all and (max-width:1780px){
+	.banking-outline-con .graph-con .graph-box {padding:60px 7.0225vw 40px;}
+}
+@media all and (max-width:1024px){
+	.banking-outline-con:before  {height:354px;}
+	.banking-outline-con .top-con {padding-top:200px;}
+	.banking-outline-con .graph-con {margin-top:136px;}
+}
+@media all and (max-width:800px){
+	.banking-outline-con .top-con .tit {margin-left:0; font-size:28px;}
+	.banking-outline-con .top-con .txt-box {margin-top:30px; padding:30px;}
+	.banking-outline-con .top-con .txt-box .stem-business-txt {margin-top:20px;}
+	.banking-outline-con .circle-con {margin-top:30px;}
+	.banking-outline-con .circle-con .circle-list {flex-wrap:wrap; margin: -2%;}
+	.banking-outline-con .circle-con .circle-list li {width:46%; margin:2%;}
+	.banking-outline-con .circle-con .circle-list li .inner .tit {font-size:14px;}
+	.banking-outline-con .graph-con .tit-box .tit {font-size:28px;}
+	.banking-outline-con .graph-con .graph-box {padding:30px;}
+	.banking-outline-con .graph-item .tit-box .legend ,
+	.banking-outline-con .graph-item .label {font-size:14px;}
+	.banking-outline-con .graph-item .tit-box .legend:before {width:34px; margin-right:10px;}
+}
+
+
+/* ****************** Lab Equipment ********************** */
+@media all and (min-width:1025px){
+	.view-detail-container .sub-tab-list-style.top-fixed:before{bottom: -1px;}
+}
+@media all and (max-width:1560px){
+/* 	.view-detail-container .sub-tab-list-style.top-fixed{top: 142px;} */
+}
+@media all and (max-width:1024px){
+	.view-detail-container .sub-tab-list-style.top-fixed{top: 61px;}
+	.equipment-list li{width: calc(50% - 15px);}
+	.view-top-container .info-con .img-box, .view-top-container .info-con .detail-box{width: 100%;}
+	.view-top-container .info-con .detail-box{padding-left: 0; margin-top: 40px;}
+	.equipment-view-page .equipment-inner-stl .equipment-logo{top: 0;}
+}
+@media all and (max-width:800px){
+	.view-detail-container .sub-tab-list-style.top-fixed .nav-on-icon.main-move-line{opacity: 0;}
+	.equipment-list-page .list-title{font-size: 29px; margin-bottom: 20px;}
+	.equipment-list{margin: -20px -7.5px;}
+	.equipment-list li{margin: 20px 7.5px;}
+	.equipment-list-page .equipment-logo{width: 50px; right: 4%;}
+	.equipment-list .info-box{padding-bottom: 20px;}
+	.equipment-list .info-box strong{margin-bottom: 8px; font-size: 15px;}
+	.equipment-list .info-box em{font-size: 13px;}
+	.view-top-container .tit-con{margin-bottom: 45px;}
+	.view-top-container .tit-con .prd-tit{font-size: 16px; margin-bottom: 15px;}
+	.view-top-container .tit-con .prd-tit sub{font-size: 11px;}
+	.view-top-container .tit-con h3{font-size: 29px; margin-bottom: 15px;}
+	.view-top-container .tit-con h3 sub{top: -6px; font-size: 16px;}
+	.view-top-container .tit-con .detail-txt{font-size: 16px; margin-bottom: 20px;}
+	.equipment-view-page .equipment-inner-stl .equipment-logo{width: 80px; top: -7%; right: 2%;}
+	.front-check-txt{font-size: 14px; padding-left: 22px;}
+	.front-check-txt:before{font-size: 16px; top: -3px;}
+	.view-top-container .front-check-txt + .detail-item{margin-top: 45px;}
+	.view-top-container .detail-item dt{margin-bottom: 10px; font-size: 15px;}
+	.view-top-container .detail-item dd p{font-size: 13px;}
+	.view-detail-container{margin-top: 10vh;}
+	.view-detail-container .sub-tab-list-style.top-fixed{top: 61px;}
+	.view-detail-container .sub-tab-wrapper-style, .view-detail-container .sub-tab-list-style.top-fixed, 
+	.view-detail-container .sub-tab-list-style ul li a{height: auto;}
+	.view-detail-container .sub-tab-list-style .area{padding: 0;}
+	.view-detail-container .sub-tab-list-style ul{display: none; margin: 0; left:0; right:0; width:100%; border-bottom:0}
+	.view-detail-container .sub-tab-list-style ul li{width: 100% !important; margin: 0; border-bottom: 1px solid #ddd;}
+	.view-detail-container .sub-tab-list-style ul li a{background-color: transparent;}
+	.view-detail-container .sub-tab-list-style ul li a em{font-size: 13px; text-align:left;}
+	.view-detail-container .sub-tab-list-style ul li.selected{border: 0; border-bottom: 1px solid #ddd!important;}
+	.view-detail-container .sub-tab-list-style ul li.selected:before,
+	.view-detail-container .sub-tab-list-style ul li.selected:after{display: none;}
+	.view-detail-container .sub-tab-list-style ul li.selected a em{font-size: 13px; font-weight:600; color:#9cc813}
+	.view-detail-container .sub-tab-con:not(#fixedContentM1){padding-top: 10vh;}
+	.view-detail-container .detail-item{padding-top: 30px;}
+	.view-detail-container .detail-tit{font-size: 15px; margin-bottom: 10px;}
+	.view-detail-container .detail-tit.big{font-size: 16px;}
+	.view-detail-container .detail-txt{font-size: 14px;}
+	.view-detail-container .front-cir-title{padding-left: 13px; margin-bottom: 20px!important;}
+	.view-detail-container .front-cir-title:before, .view-detail-container .front-cir-title:after{width: 4px; height: 4px;}
+	.view-detail-container .front-cir-title:before{top: 4px;}
+	.view-detail-container .front-cir-title:after{top: 10px;}
+	.view-detail-container .img-box.add-top-pd{margin-top: 30px;}
+	.equipment-view-tbl {table-layout:auto;}
+	.equipment-view-tbl th, .equipment-view-tbl td{padding: 10px; font-size: 13px;}
+	.equipment-view-tbl .sub-tit{padding: 12px 20px; width:30%;}
+	.view-tbl-txt{font-size: 12px; margin-top: 15px;}
+	.equipment-down-item a{padding: 15px 20px;}
+	.equipment-down-item p{font-size: 13px; padding-left:25px;}
+	.equipment-down-item p i{margin-right: 10px; font-size: 16px;}
+	.equipment-down-item .icon em{font-size: 12px;}
+	.equipment-down-item .icon i{margin-left: 15px; font-size: 14px;}
+	.equipment-list-btn{margin-top: 5vh; width: 150px; height: 40px; line-height: 40px; font-size: 13px;}
+	.equipment-down-item .align-center:first-child{width: 80%;}
+}
+@media all and (max-width:480px){
+	.view-detail-container .sub-tab-list-style.top-fixed{top: 61px;}
+}
+
+
+
+/* ****************** CS center ********************** */
+@media all and (max-width:1260px){
+	.news-page, .branches-page{margin: 0 -30px;}
+	.news-slide-wrapper .slide-wrap{padding: 0 30px;}
+}
+@media all and (max-width:1200px){
+	.branches-page{padding: 90px 0;}
+	.branches-info-con{width: 55%;}
+	.branches-map-con{width: 45%;}
+}
+@media all and (max-width:1024px){
+	.news-page,  .branches-page{margin: 0 -15px;}
+	/* -------- inquiry  -------- */
+	.inquiry-wrapper{flex-wrap:wrap;}
+	.inquiry-wrapper ul{width: 100%;}
+	.branches-wrapper{position: relative; flex-direction: column-reverse;}
+	/* .branches-content-tit{position: absolute; top: 0; left: 30px;} */
+	.branches-info-con, .branches-map-con{width: 100%;}
+	.branches-map-con{text-align: center; margin-bottom: 40px; height: 100%;}
+	/* -------- contact  -------- */
+	.contact-info-wrapper{height: auto;}
+	.contact-info-wrapper .inner{padding: 40px 40px 60px;}
+	.contact-info-wrapper h3{width: 100%; margin-right: 0; margin-bottom: 30px;}
+	.contact-info-wrapper .info-list{width: 100%;}
+}
+@media all and (max-width:800px){
+	.inquiry-content-tit, .branches-content-tit, .content-tit{font-size: 29px; margin-bottom: 25px;}
+	.notice-page .paging{margin-top: 40px;}
+	.contact-info-wrapper .inner{padding: 25px 25px 40px;}
+	.contact-info-wrapper h3{font-size: 17px; margin-bottom: 20px;}
+	.contact-info-wrapper .info-list dl + dl{margin-top: 10px;}
+	.contact-info-wrapper .info-list dt, .contact-info-wrapper .info-list dd{font-size: 13px;}
+	.contact-info-wrapper .info-list dt{width: 70px;}
+	.contact-info-wrapper .info-list dd{width: calc(100% - 70px);}
+	.news-page{font-size: 13px;}
+	.news-slide-wrapper .news-slide-btn{font-size: 20px;}
+	.news-slide-wrapper .slide-wrap{padding: 0 15px;}
+	.news-slide-list{margin: -8px;}
+	.news-slide-list li{margin: 8px;}
+	.news-slide-list .gallery-info strong{height: auto;}
+	.news-slide-wrapper .slick-dots li{width: 6px; height: 6px; margin: 0 7px;}
+	.news-slide-wrapper .slick-dots li.slick-active{border-width: 2px;}
+	/* -------- inquiry  -------- */
+	.inquiry-wrapper{padding: 30px 0 40px;}
+	.inquiry-wrapper .inquiry-tit{margin-bottom: 10px;}
+	.inquiry-wrapper .inquiry-tit em{font-size: 14px;}
+	.inquiry-wrapper .write-input, .inquiry-wrapper .inquiry-select{height: 42px; text-indent: 10px}
+	.inquiry-wrapper .write-textarea{height: 150px;}
+	.inquiry-wrapper ul li{margin-bottom: 25px;}
+	.inquiry-wrapper .email-fieldset .write-input{width: calc(50% - 16px)!important;}
+	.inquiry-wrapper .email-fieldset .inquiry-select{width:100%; margin-top:6px}
+	.inquiry-wrapper .email-fieldset .hypen{font-size: 13px; margin: 0 5px;}
+	.inquiry-wrapper input::-webkit-input-placeholder{font-size: 13px}
+	.inquiry-wrapper input:-ms-input-placeholder{font-size: 13px}
+	.inquiry-wrapper textarea::-webkit-input-placeholder{font-size: 13px;}
+	.inquiry-wrapper textarea:-ms-input-placeholder{font-size: 13px;}
+	.inquiry-wrapper .inquiry-select{font-size: 13px;}
+	.file-custom-box label{width: 140px; height: 35px; line-height: 35px; padding: 0 10px; font-size: 11px;}
+	.file-custom-box label i{font-size: 15px;}
+	.file-custom-box .upload-name{width: calc(100% - 144px); height: 35px; line-height: 35px; font-size: 12px;}
+	.file-custom-txt{font-size: 13px; margin-top: 15px;}
+	.classify-select-list .classify-select{margin: 0 5px; height: 40px;}
+	.classify-select-list .classify-select label{height: 40px; line-height: 40px; font-size: 13px;}
+	.classify-select-list .classify-select label em{padding-left: 20px;}
+	.classify-select-list .classify-select label em:before{font-size: 15px; top: -11px;}
+	.classify-select-list .classify-select label:after{top: -2px; border-width: 1px;}
+	.inquiry-check-stl label{padding-left: 22px; font-size: 12px;}
+	.inquiry-check-stl label:before{font-size: 15px;}
+	.agree-check-box .agree-click i{font-size: 13px;}
+	.anti-spam-con{margin-bottom: 0; display: block;}
+	.anti-spam-con > div{width: 100%;}
+	.anti-spam-con em{width: 65%; font-size: 12px;}
+	.anti-spam-con .write-input{width: 100%; margin-top: 10px;}
+	.inquiry-btn{width: 150px; height: 40px; line-height: 40px; font-size: 13px;}
+	/* -------- branches  -------- */
+	.branches-page{padding: 45px 0;}
+	.branches-info-con .info-box h4, .branches-info-con .info-box .info-list{padding: 13px 20px;}
+	.branches-info-con .info-box h4{font-size: 14px;}
+	.branches-info-con .info-box + .info-box{margin-top: 20px;}
+	.branches-info-con .info-box .info-list{padding: 15px 20px;}
+	.branches-info-con .info-box .info-list > div + div{margin-top: 10px;}
+	.info-box .info-list .tel dt{width: 100px; font-size: 13px;}
+	.info-box .info-list .tel dd{width: calc(100% - 100px); font-size: 13px;}
+	.info-box .info-list .address strong, .info-box .info-list .address em{font-size: 13px;}
+	.info-box .info-list .address strong{margin-right: 10px;}
+}
+@media all and (max-width:680px){
+	.news-slide-wrapper{padding: 50px 0 40px;}
+	.news-slide-list .gallery-info{padding: 20px; height: 120px;}
+	.news-gallery-list{padding: 50px 0 20px; margin: -10px -6px;}
+	.news-gallery-list li{width: calc(33.33% - 12px); margin: 10px 6px;}
+	.news-gallery-list .gallery-info{padding: 20px 0;}
+}
+@media all and (max-width:480px){
+	.news-gallery-list li{width: calc(50% - 12px);}
+	.news-thumb .no-image img{height:30px;}
+	.branches-info-con .info-box .info-list > div + div{margin-top: 20px;}
+	.info-box .info-list .tel, .info-box .info-list .address{width: 100%;}
+	.info-box .info-list .tel dt{width: auto; padding-right: 10px;}
+	.info-box .info-list .address{text-align: left; margin-top: 10px;}
+}

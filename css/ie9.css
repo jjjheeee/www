@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* *******************************************************
+ * filename : ie9.css
+ * description : 하위브라우저에서만 사용되는 CSS
+ * date : 2021-06-14
+******************************************************** */
+
+/* -------- default.css -------- */
+.cm-word-split-JS{opacity:1.0;}
+
+/* -------- layout.css -------- */
+/*  SUB LAYOUT :: 서브메뉴(스타일1) */
+#topMenu01 .side-menu-inner ul{display:inline-block;}
+/*  SUB LAYOUT :: 서브메뉴(스타일2) */
+#topMenu02 .side-menu-inner ul{display:inline-block;}
+#topMenu02 .side-menu-inner ul:after{display:none;}
+#topMenu02 .side-menu-inner ul li{float:none; display:table-cell; vertical-align:middle;}
+/*  SUB LAYOUT :: 서브메뉴(스타일3) */
+#topMenu03 .side-menu-inner ul{display:block;}
+#topMenu03 .side-menu-inner ul li{box-sizing:border-box;}
+
+/* -------- main.css -------- */
+/* 메인 비주얼 :: 텍스트 */
+.main-visual-item .main-visual-txt-inner{position:absolute; top:50%; transform:translateY(-50%);}
+.main-visual-item.active-item .main-visual-txt1,
+.main-visual-item.active-item .main-visual-txt2,
+.main-visual-item.active-item .main-visual-txt-con .main-visual-txt3,
+.main-visual-item.active-item .main-visual-txt-con .main-visual-more-btn{
+	opacity:1.0;
+}
+

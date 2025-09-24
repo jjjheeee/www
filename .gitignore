@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Cache / Temporary
+cache/
+tmp/
+vendor/
+
+# Uploads (실서버 업로드된 이미지, 동영상 등)
+uploads/
+media/
+
+
+./index.php

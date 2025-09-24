@@ -1,0 +1,8 @@
+PHP_FLAG register_globals ON
+PHP_VALUE mysql.default_charset UTF8
+PHP_VALUE allow_url_fopen ON
+PHP_VALUE max_input_vars 2000
+PHP_VALUE upload_max_filesize 100M
+PHP_VALUE post_max_size 100M 
+
+ErrorDocument 404 /404.html

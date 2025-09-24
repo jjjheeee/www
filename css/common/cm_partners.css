@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* *******************************************************
+ * filename : partners.css
+ * description : 파트너사 게시판 관련 CSS
+ * date : 2019-09-30
+******************************************************** */
+
+/* ****************** 파트너사 게시판 :: 파트너사 관리 PR01 ********************** */
+.partners-list-style01{margin:0 -1%;}
+.partners-list-style01 > li{float:left; width:18%; margin:0 1%; margin-bottom:33px;}
+.partners-list-style01 .partners-link-box{display:block; border:1px solid #ddd;  background-color: #fff;}
+.partners-list-style01 .partners-logo-box{position:relative; width:100%; padding-top:56.574%;}
+.partners-list-style01 .partners-logo-box > span img{position:absolute; top:0; left:0; bottom:0; right:0; max-width:100%; max-height:100%; margin:auto;}
+.partners-list-style01 .partners-tit{display:block; height:40px; line-height:40px; font-weight:400; text-align:center; color:#5d5d5d; letter-spacing:-0.5px; font-size:13px; text-align:center;   }
+@media all and (max-width:800px){
+	.partners-list-style01 > li{width:31.33%; margin-bottom:15px;}
+}
+@media all and (max-width:480px){
+	.partners-list-style01 > li{width:48%;}
+}
+
+
+/* ****************** 파트너사 게시판 :: 파트너사 관리 PR02 ********************** */
+.partners-list-style02 ul{margin-right:-3px}
+.partners-list-style02 li {float: left; width:25%; background-color: #fff; text-align: center; margin:-1px 0 0 -1px}
+.partners-list-style02 li a {display: block; padding:10px; border:1px solid #e5e5e5; }
+.partners-list-style02 .partners-img-box {display:block; height:80px;}
+.partners-list-style02 .partners-img-box .img-inner{position:relative; width:100%; height:100%; }
+.partners-list-style02 .partners-img-box .img-inner img {position:absolute; top:0px; left:0px; bottom:0px; right:0px; margin:auto; max-width: 100%; max-height: 100%;}
+.partners-list-style02 .partner-name {display: table; text-align: center; width: 100%; font-size: 14px; height: 49px; overflow: hidden; color: #666; letter-spacing: -0.5px;}
+.partners-list-style02 .partner-name p {display: table-cell; vertical-align: middle; }
+.partners-list-style02.margin ul{margin:0 -1% !important;}
+.partners-list-style02.margin li {margin: 0 1% 2%; width: 23%; }/* 리스트 사이 간격줄때 주석해제 */
+@media all and (max-width:800px){
+	.partners-list-style02 ul{margin-right:-3px}
+	.partners-list-style02 li {width:33.33%; }
+	.partners-list-style02.margin li {width: 31.33%; }
+}
+@media all and (max-width:480px){
+	.partners-list-style02 ul{margin-right:-2px}
+	.partners-list-style02 li {width:50%; }
+	.partners-list-style02.margin li {width: 48%; }/* 리스트 사이 간격줄때 주석해제 */
+	.partners-list-style02 .partners-img-box {height:50px;}
+	.partners-list-style02 .partner-name{height:30px; font-size:13px;}
+}
+
+/* ****************** 파트너사 게시판 :: 파트너사 관리 PR03(제휴업체 소개글) ********************** */
+.partners-list-style03{margin:0 -0.5%}
+.partners-list-style03 .supporters-item{float:left; width:24%; margin:0 0.5% 2%; overflow:hidden;}
+.partners-list-style03 .supporters-inner{display:block; border:1px solid #ddd;}
+.supporters-img-thum{position:relative; width:100%; padding-top:55.17%; border-bottom:1px solid #ddd; overflow:hidden;}
+.supporters-img-thum > span img{position:absolute; top:0; left:0; bottom:0; right:0; max-width:100%; max-height:100%; margin:auto;}
+.supporters-info-box{height:110px; padding:20px; background-color:#f2f2f2;}
+.supporters-info-box > h3{font-size:19px; line-height:1.5; color:#2b2b2b; letter-spacing:-0.5px; font-weight:400; margin-bottom:10px;}
+.supporters-info-box > p{font-size:15px; line-height:1.5; color:#656565; letter-spacing:-0.55px;}
+@media all and (max-width:1024px){
+	.supporters-info-box{padding:10px}
+}
+@media all and (max-width:800px){
+	.partners-list-style03 .supporters-item{width:48%;}
+	.supporters-info-box > h3{font-size:15px; margin-bottom:5px;}
+	.supporters-info-box > p{font-size:13px}
+}
+@media all and (max-width:480px){
+	.partners-list-style03{margin:0}
+	.partners-list-style03 .supporters-item{float:none; width:auto; margin:0 0 2% 0}
+	.supporters-info-box{height:auto;}
+}
+
+
+/* ****************** 파트너사 게시판 :: 파트너사 관리 PR04 ********************** */
+.partners-list-style04 {margin:0 -5px 0 1px }
+.partners-list-style04 .partern-item {float:left; width:20%; margin-bottom: 30px; margin-left:-1px;}
+.partners-list-style04 .partern-item .partern-item-inner {border:1px solid #ddd;}
+.partners-list-style04 .partern-item .partern-item-inner a{display:block;}
+.partners-list-style04 .partern-item .parter-img {position:relative; width:100%; padding-top: 56.48%; height:0;}
+.partners-list-style04 .partern-item .parter-img .parter-img-inner {position:absolute; left:15px; top:15px; bottom:15px; right:15px;}
+.partners-list-style04 .partern-item .parter-img .parter-img-inner img {max-width:100%; max-height:100%; position:absolute; top:0px; left:0px; right:0px; bottom:0px; margin:auto; }
+.partners-list-style04 .partern-item .parter-tit {text-align:center; display:table; height:50px; width:100%; border-top: 1px solid #eee;}
+.partners-list-style04 .partern-item .parter-tit h3 {display:table-cell; vertical-align:middle; padding:0 15px; font-size:16px; line-height: 1.2; letter-spacing: -0.5px; color:#555; font-weight: 400; }
+/* margin이 없는 list */
+.parter-list-wrapper-no-margin .partners-list-style04 .partern-item{margin-top:-1px; margin-bottom:0}
+ 
+@media all and (max-width:800px){
+    .partners-list-style04 {margin:0 -3px 0 1px }
+    .partners-list-style04 .partern-item{width:33.33%;}
+	.partners-list-style04 .partern-item .parter-tit {height:40px;}
+    .partners-list-style04 .partern-item .parter-tit h3 {font-size:13px; }
+}
+@media all and (max-width:480px){
+    .partners-list-style04 {margin:0 -2px 0 1px }
+    .partners-list-style04 .partern-item {width:50%;}
+}

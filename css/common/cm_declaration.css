@@ -1,0 +1,159 @@
+@charset "utf-8";
+/* *******************************************************
+ * filename : declaration.css
+ * description : 신고서 작성 관련 CSS
+ * date : 2021-04-13
+******************************************************** */
+
+/* ******************  신고서 작성 스타일 01 ********************** */
+
+/* 신고서 폼 */
+.declaration-write-form-style01 .form-area{padding-bottom:30px}
+.declaration-write-form-style01 .declaration-form-tit{border-bottom:1px solid #ababab; padding-bottom:48px; margin-bottom:48px}
+.declaration-write-form-style01 .declaration-form-tit .tit{font-weight:600; font-size:30px; letter-spacing:-0.65px; color:#000;}
+.declaration-write-form-style01 .inquiry-essential-txt{text-align:right; color:#373737; font-size:13px; letter-spacing:-0.3px; padding-bottom:15px;}
+.declaration-write-form-style01 .essential-icon{color:#cf0505;}
+.declaration-write-form-style01 .inquiry-agree-wrap{margin-bottom:25px}
+.declaration-write-form-style01 .inquiry-agree-wrap .agree-tit{float:left}
+.declaration-write-form-style01 .inquiry-agree-wrap .agree-btn{float:right}
+.declaration-write-form-style01 .inquiry-agree-wrap .agree-btn p{display:inline-block; vertical-align:middle;}
+.declaration-write-form-style01 .inquiry-agree-wrap .agree-btn p.agree-tit-sm{font-weight:500; font-size:16px; letter-spacing:-0.65px; color:#010101; margin-right:19px}
+
+/* 신고서 폼 :: 작성영역 */
+.declaration-write-form-style01 .write-form-tbl{width:100%;}
+.declaration-write-form-style01 .write-form-tbl th,.declaration-write-form-style01 .write-form-tbl td{padding-bottom:27px; letter-spacing:-0.5px; }
+.declaration-write-form-style01 .write-form-tbl th{color:#000; font-size:18px; font-weight:500; text-align:left;}
+.declaration-write-form-style01 .write-form-tbl .write-input,
+.declaration-write-form-style01 .write-form-tbl .write-select,
+.declaration-write-form-style01 .write-form-tbl .write-textarea{height:50px; border:0px; width:50%; background-color:#f5f5f5; border:1px solid #dbdbdb; font-size:14px; vertical-align:middle; letter-spacing:-0.65px;}
+.declaration-write-form-style01 .write-form-tbl .write-input:focus{border-color:#333;}
+.declaration-write-form-style01 .write-form-tbl .write-input,
+.declaration-write-form-style01 .write-form-tbl .write-select{text-indent:30px; }
+.declaration-write-form-style01 .write-form-tbl .write-textarea{width:100%; height:190px; resize:none; padding:20px 30px; box-sizing:border-box}
+.declaration-write-form-style01 .write-form-tbl td input[type="file"]{height:auto; padding:10px 0;text-indent:0; border:0;}
+.declaration-write-form-style01 .write-form-tbl td .write-sub-txt{font-size:15px; color:#464646; letter-spacing:-0.65px; padding-left:25px; display:inline-block}
+.declaration-write-form-style01 .write-form-tbl td .write-sub-txt2{display:block; color:#888; margin-top:5px; font-size:11px; color:#aaa; letter-spacing:-0.5px;}
+.declaration-write-form-style01 .write-form-tbl .hypen{display:inline-block; vertical-align:middle;width:12px; margin:0 5px; text-align:center;}
+.declaration-write-form-style01 .write-form-tbl .write-input::placeholder,
+.declaration-write-form-style01 .write-form-tbl .write-textarea::placeholder{color:464646; opacity:0.45;}
+.declaration-write-form-style01 .write-form-tbl .write-input.password-input{max-width:300px;}
+.declaration-write-form-style01 .write-form-tbl .phone-fieldset .write-select,
+.declaration-write-form-style01 .write-form-tbl .email-fieldset .write-input{max-width:150px}
+.declaration-write-form-style01 .write-form-tbl .file-custom-box input[type="file"] {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0; } 
+.declaration-write-form-style01 .write-form-tbl .file-custom-box label { 
+    float:right;
+    width:220px;;
+    height:46px;
+    color: #fff; 
+    font-size: 16px;
+	font-weight:500;
+    letter-spacing:-0.65px;
+    line-height: 46px; 
+    text-align:center;
+    cursor: pointer; 
+    border: 1px solid #000; 
+    vertical-align:middle;
+    margin-left:15px;
+    background-color:#000;
+} 
+.declaration-write-form-style01 .write-form-tbl .file-custom-box .upload-name { 
+    float:left; 
+    width:calc(100% - 243px);
+    height:44px;
+    font-size: 13.5px; 
+    vertical-align:middle;
+    background-color: #f5f5f5; 
+    border: 1px solid #dbdbdb; 
+    -webkit-appearance: none;
+    text-indent:10px;
+    -moz-appearance: none; 
+    appearance: none; 
+}
+/* 신고서 폼 :: 작성영역 하단 */
+.declaration-write-form-style01 .declaration-write-agree{margin:80px 0;}
+.declaration-write-form-style01 .declaration-write-agree .agree-tit{color:#000; font-size:21px; letter-spacing:-0.65px; font-weight:500; word-break:keep-all; line-height:1.5}
+.declaration-write-form-style01 .declaration-write-agree .agree-check-txt{font-size:15px; letter-spacing:-0.3px; color:#333;}
+.declaration-write-form-style01 .declaration-write-agree .agree-check-txt:first-child{margin-top:0}
+.declaration-write-form-style01 .declaration-write-agree .agree-check-txt input{display:none;}
+.declaration-write-form-style01 .declaration-write-agree .agree-check-txt label{position:relative; padding-left:26px; font-weight:500; font-size:16px}
+.declaration-write-form-style01 .declaration-write-agree .agree-check-txt label i{position:absolute; top:3px; left:0px; font-size:22px; color:#ddd;}
+.declaration-write-form-style01 .declaration-write-agree .agree-check-txt input:checked + label,
+.declaration-write-form-style01 .declaration-write-agree .agree-check-txt input:checked + label i{color:#013eb3;}
+.inquiry-agreement-box{height:220px; overflow-y:auto; overflow-x:hidden; padding:20px; background-color:#fff; border-top:1px solid #d0d0d0; box-sizing:border-box;}
+
+.declaration-write-form-style01 .write-form-tbl2{border-bottom:1px solid #d0d0d0; border-top:1px solid #d0d0d0; }
+.declaration-write-form-style01 .write-form-tbl.write-form-tbl2 th, .write-form-tbl.write-form-tbl2 td{padding:3px 0; border-bottom:1px solid #eaeaea}
+.declaration-write-form-style01 .write-form-tbl.write-form-tbl2 th{font-size:16px; color:#464646; padding-left:5px}
+.declaration-write-form-style01 .write-form-tbl.write-form-tbl2 .write-input, 
+.declaration-write-form-style01 .write-form-tbl.write-form-tbl2 .write-select{border:0; background-color:#fff}
+.declaration-write-form-style01 .write-form-tbl.write-form-tbl2 .write-select{-webkit-appearance: none; -moz-appearance: none; appearance: none; text-indent:0}
+
+/* 하단 주의사항 */
+.decalaration-write-txt{font-weight:400; font-size:15px; letter-spacing:-0.65px; color:#909090; line-height:1.5; position:relative; padding-left:35px; word-break:keep-all}
+.decalaration-write-txt.txt-center{text-align:center; padding-left:0}
+.decalaration-write-txt .icon{position:absolute; left:0; top:-1px; font-size:24px; color:#ff3600}
+.decalaration-write-txt b{font-weight:400; color:#ff3600}
+.decalaration-write-txt span{display:inline-block}
+
+
+@media all and (max-width:800px){		
+	/* 신고서 폼 */
+	.declaration-write-form-style01 .declaration-form-tit{padding-bottom:20px; margin-bottom:20px;}
+	.declaration-write-form-style01 .declaration-form-tit .tit{font-size:20px; }
+	.declaration-write-form-style01 .inquiry-essential-txt{font-size:12px; padding-bottom:5px}
+	.declaration-write-form-style01 .inquiry-agree-wrap{margin-bottom:15px}
+	.declaration-write-form-style01 .inquiry-agree-wrap .agree-tit{float:none; font-size:16px}
+	.declaration-write-form-style01 .inquiry-agree-wrap .agree-btn{float:none; text-align:right; margin-top:10px;}
+	.declaration-write-form-style01 .inquiry-agree-wrap .agree-btn p.agree-tit-sm{font-size:13px; margin-right:10px}
+	.decalaration-write-txt{font-size:13px; padding-left:26px}
+	.decalaration-write-txt .icon{font-size:19px}
+
+	/* 신고서 폼 :: 작성영역 */
+	.declaration-write-form-style01 .write-form-tbl tr,.declaration-write-form-style01 .write-form-tbl th,.declaration-write-form-style01 .write-form-tbl td{display:block; padding:0; width:100%; border-bottom:0; text-indent:0;}
+	.declaration-write-form-style01 .write-form-tbl th{font-size:13px; padding-top:10px; font-weight:600;}
+	.declaration-write-form-style01 .write-form-tbl td{padding:10px 0 15px;}
+	.declaration-write-form-style01 .write-form-tbl td .write-input,
+	.declaration-write-form-style01 .write-form-tbl td .write-select,
+	.declaration-write-form-style01 .write-form-tbl td .write-textarea{width:100% ; border:0; max-width:none; -webkit-border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px;border-radius:5px; height:40px; text-indent:10px}
+	.declaration-write-form-style01 .write-form-tbl td .write-textarea{height:80px; padding:10px; text-indent:0}
+	.declaration-write-form-style01 .write-form-tbl td .write-sub-txt, .declaration-write-form-style01 .write-form-tbl td .write-sub-txt2{display:block; margin-left:0; margin-top:7px; padding-left:0; text-align:left; font-size:12px; }
+	.declaration-write-form-style01 .write-form-tbl .write-input.password-input{max-width:none}
+	.declaration-write-form-style01 .write-form-tbl .phone-fieldset .write-input,
+    .declaration-write-form-style01 .write-form-tbl .phone-fieldset .write-select{width:calc(33.33% - 18px); max-width:none;}
+	.declaration-write-form-style01 .write-form-tbl .email-fieldset .write-input{width:calc(50% - 13.5px); max-width:none}
+	.declaration-write-form-style01 .write-form-tbl .email-fieldset .write-select{width:100%; margin-top:5px; max-width:none;}
+	.declaration-write-form-style01 .write-form-tbl .file-custom-box{position:relative; padding-right:80px}
+    .declaration-write-form-style01 .write-form-tbl .file-custom-box label{position:absolute; top:0px; right:0px; width: 70px; height:40px; line-height:40px; font-size:13px}
+    .declaration-write-form-style01 .write-form-tbl .file-custom-box .upload-name{width:100%; height:40px; border:0; border-radius:5px}
+	
+	/* 신고서 폼 :: 작성영역 하단 */
+	.declaration-write-form-style01 .declaration-write-agree{margin:50px 0}
+	.declaration-write-form-style01 .declaration-write-agree .agree-check-txt label{font-size:13px; padding-left:20px}
+	.declaration-write-form-style01 .declaration-write-agree .agree-check-txt label i{font-size:18px; top:1px}
+	.declaration-write-form-style01 .write-form-tbl2{border-bottom:0}
+	.declaration-write-form-style01 .write-form-tbl.write-form-tbl2 tr{border-bottom:1px solid #eaeaea; padding:10px 0}
+	.declaration-write-form-style01 .write-form-tbl.write-form-tbl2 th{font-size:13px}
+	.declaration-write-form-style01 .write-form-tbl.write-form-tbl2 th, 
+	.declaration-write-form-style01 .write-form-tbl.write-form-tbl2 td{border-bottom:0; padding:5px}
+	.declaration-write-form-style01 .write-form-tbl.write-form-tbl2 .write-input, 
+	.declaration-write-form-style01 .write-form-tbl.write-form-tbl2 .write-select{background-color:#f5f5f5}
+	.declaration-write-form-style01 .write-form-tbl.write-form-tbl2 .write-select{text-indent:10px}
+}
+
+
+/* ------------ 윤리경영 :: 신고서확인, 내용  --------------- */
+.declaration-finish-style01 .declaration-check-con{max-width:600px; margin:0 auto}
+.declaration-finish-style01 .finish-box h4{color:#222; font-weight:600; font-size:36px; letter-spacing:-0.3px; margin-bottom:25px; text-align:center;}
+.declaration-finish-style01 .finish-box {border: 1px solid #e5e5e5; padding:70px 10%; position:relative;  }
+.declaration-finish-style01 .finish-box:before {content:""; display:block; width: 90px; height:1px; background-color: #222; position:absolute; top:-1px; left:50%; margin-left:-45px;  }
+.declaration-finish-style01 .finish-box > .inner > .tit {font-size: 38px; letter-spacing:-0.5px; color: #222; font-weight:600; text-align:center;  }
+.declaration-finish-style01 .finish-box .finish-box-tbl{border-top:0; margin-bottom:50px}
+.declaration-finish-style01 .finish-box .finish-box-tbl input{width:100%; border:0}
+.declaration-finish-style01 .finish-box .finish-box-tbl th,
+.declaration-finish-style01 .finish-box .finish-box-tbl td{padding:15px 10px}
+@media all and (max-width:800px){		
+	.declaration-finish-style01 .finish-box{padding:50px 30px}
+	.declaration-finish-style01 .finish-box h4{font-size:23px}
+	.declaration-finish-style01 .finish-box .finish-box-tbl th{padding:12px 0}
+	.declaration-finish-style01 .finish-box .finish-box-tbl td{padding:0 0 12px}
+}
