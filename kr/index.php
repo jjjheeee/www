@@ -1,6 +1,4 @@
 <?
-echo $_SERVER['HTTP_HOST'];
-echo $_SERVER["DOCUMENT_ROOT"];
 include $_SERVER["DOCUMENT_ROOT"]."/lib/config.php";
 include "./lib/config.php";
 $fullpage = 1;

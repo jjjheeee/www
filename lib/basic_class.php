@@ -2,7 +2,7 @@
 class dbConnect {
 	var $db_host, $db_name, $db_user, $db_pwd, $db_conn;
 
-	function dbConnect ( $db_host, $db_name, $db_user, $db_pwd) {
+	function __construct ( $db_host, $db_name, $db_user, $db_pwd) {
 		$this->db_host		= $db_host;
 		$this->db_name		= $db_name;
 		$this->db_user		= $db_user;
